@@ -1,0 +1,66 @@
+\documentclass[review]{elsarticle}
+
+\usepackage{lineno}  %hyperref
+\modulolinenumbers[5]
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proof}{Proof}
+\newtheorem{definition}{Definition}
+\newtheorem{property}{Property}
+\newtheorem{example}{Example}
+\journal{Applied Soft Computing}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frontmatter}
+\title{A Weighting Similarity Learning on Categorical Data}
+%\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
+
+%% Group authors per affiliation:
+\author[a]{Fuyuan Cao}
+\ead{cfy@sxu.edu.cn}
+
+\author[a]{Jie Wen}
+\ead{1967688145@qq.com}
+
+\cortext[cor1]{Corresponding author}
+
+\address[a]{Key Laboratory of Computational
+Intelligence and Chinese Information Processing of Ministry of
+Education, School of Computer and Information Technology, Shanxi
+University, Taiyuan 030006, China}
+
+\begin{abstract}
+Attribute independence has been taken as a major assumption in the limited research that has been conducted on similarity analysis for categorical data. However, in real-world data sources,attribute are more or less associated with each other in terms of certain coupling relationships.This paper proposes a weighting distance learning approach that generates a coupled attribute similarity measure for nominal objects with attribute couplings to capture a global picture of attribute similarity.It involves the frequency-based intra-coupled similarity within an attribute and the inter-coupled similarity upon value co-occurrences between attribute as well as their integration on the object level.Substantial experiments on extensive
+UCI data sets verify the theoretical conclusions.The experimental results show that the similarity measure proposed in this paper has a good effect on clustering data clustering.
+\end{abstract}
+\begin{keyword}
+Clustering, Coupled attribute similarity, Weighting similarity learning
+\end{keyword}
+
+\end{frontmatter}
+
+\section{Introduction}
+
+　　Similarity analysis has been a problem of great practical importance in several domains for decades, not least in recent work, including behavior analysis, document analysis, and image analysis. A typical aspect of these applications is clustering. The similarity between clusters is often built on top of the similarity between data objects. The similarity between attribute values assesses the relationship between two data objects and even between two clusters. The more two objects or clusters resemble each other, the lager is the similarity. The other similarity between attributes can also be converted into the difference of similarities between pairwise attribute values. Therefore, the similarity between attribute values plays a fundamental role in similarity analysis.
+
+    Compared with the intensive study on the similarity between two numerical variables, such as Euclidean and Minkowski distance, the similarity for categorical data has received much less attention. Only limited efforts have been made, including SMS, which uses 0s and 1s to distinguish the similarity between distinct and identical categorical values, occurrence frequency (OF) and information-theoretical similarity (Lin), to discuss the similarity between nominal values. The challenge is that these methods are too rough to precisely characterize the similarity between categorical attribute values, and only deliver a local picture of the similarity. In addition, none of them provides a comprehensive similarity between categorical attributes by combining relevant aspects.Can Wang has put forward an effective method to improve the shortcomings of the above algorithms.
+
+
+\subsection{二级标题}
+　　正文
+\section*{附录}
+附录内容
+\bibliographystyle{elsarticle-num}
+\bibliography{temp}
+\end{document}

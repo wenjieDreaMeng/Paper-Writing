@@ -1,0 +1,60 @@
+\documentclass[review]{elsarticle}
+
+\usepackage{lineno}  %hyperref
+\modulolinenumbers[5]
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proof}{Proof}
+\newtheorem{definition}{Definition}
+\newtheorem{property}{Property}
+\newtheorem{example}{Example}
+\journal{Applied Soft Computing}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{frontmatter}
+\title{A Weighting Similarity Learning on Categorical Data}
+%\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
+
+%% Group authors per affiliation:
+\author[a]{Fuyuan Cao}
+\ead{cfy@sxu.edu.cn}
+
+\author[a]{Jie Wen}
+\ead{1967688145@qq.com}
+
+\cortext[cor1]{Corresponding author}
+
+\address[a]{Key Laboratory of Computational
+Intelligence and Chinese Information Processing of Ministry of
+Education, School of Computer and Information Technology, Shanxi
+University, Taiyuan 030006, China}
+
+\begin{abstract}
+Attribute independence has been taken as a major assumption in the limited research that has been conducted on similarity analysis for categorical data. However, in real-world data sources,attribute are more or less associated with each other in terms of certain coupling relationships.This paper proposes a Weighting distance learning approach that generates a coupled attribute similarity measure for nominal objects with attribute couplings to capture a global picture of attribute similarity.It involves the frequency-based intra-coupled similarity within an attribute and the inter-coupled similarity upon value co-occurrences between attribute as well as their integration on the object level.Substantial experiments on extensive
+UCI data sets verify the theoretical conclusions.
+\end{abstract}
+\begin{keyword}
+关键词内容
+\end{keyword}
+
+\end{frontmatter}
+
+\section{一级标题}
+　　正文
+\subsection{二级标题}
+　　正文
+\section*{附录}
+附录内容
+\bibliographystyle{elsarticle-num}
+\bibliography{temp}
+\end{document}
