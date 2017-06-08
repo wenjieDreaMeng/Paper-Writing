@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.5.29)  29 MAY 2017 12:33
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.5.29)  3 JUN 2017 21:57
 entering extended mode
 **E:/我的文件/大数据挖掘/论文/Weight-CADO/Weight-CADO.tex
 (E:/我的文件/大数据挖掘/论文/Weight-CADO/Weight-CADO.tex
@@ -204,6 +204,9 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 ))
+(d:\CTEX\MiKTeX\tex\latex\multirow\multirow.sty
+\bigstrutjot=\dimen116
+)
 \c@theorem=\count108
 \c@lemma=\count109
 \c@proof=\count110
@@ -212,29 +215,29 @@ G,.JBIG2,.JB2,.eps]
 \c@example=\count113
 
 (E:\我的文件\大数据挖掘\论文\Weight-CADO\Weight-CADO.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 (d:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count114
-\scratchdimen=\dimen116
+\scratchdimen=\dimen117
 \scratchbox=\box33
 \nofMPsegments=\count115
 \nofMParguments=\count116
 \everyMPshowfont=\toks22
 \MPscratchCnt=\count117
-\MPscratchDim=\dimen117
+\MPscratchDim=\dimen118
 \MPnumerator=\count118
 \makeMPintoPDFobject=\count119
 \everyMPtoPDFconversion=\toks23
@@ -255,63 +258,65 @@ Missing character: There is no � in font cmr10!
  [1
 
 
-{d:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}]
-Missing character: There is no � in font cmti10!
-Missing character: There is no � in font cmti10!
-Missing character: There is no � in font cmti10!
-Missing character: There is no � in font cmti10!
-Missing character: There is no � in font cmti10!
-Missing character: There is no � in font cmti10!
-Missing character: There is no � in font cmti10!
-Missing character: There is no � in font cmti10!
-Missing character: There is no � in font cmr10!
-Missing character: There is no � in font cmr10!
-Missing character: There is no � in font cmr10!
-Missing character: There is no � in font cmr10!
-Missing character: There is no � in font cmr10!
-Missing character: There is no � in font cmr10!
-Missing character: There is no � in font cmr10!
-Missing character: There is no � in font cmr10!
- [2]
-Missing character: There is no � in font cmbx10!
-Missing character: There is no � in font cmbx10!
-Missing character: There is no � in font cmbx10!
-Missing character: There is no � in font cmbx10!
-Missing character: There is no � in font cmr10!
-Missing character: There is no � in font cmr10!
-Missing character: There is no � in font cmr10!
-Missing character: There is no � in font cmr10!
-Missing character: There is no � in font cmr10!
-Missing character: There is no � in font cmr10!
-Missing character: There is no � in font cmr10!
-Missing character: There is no � in font cmr10!
+{d:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}] [2] [3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 92.
 
-(E:\我的文件\大数据挖掘\论文\Weight-CADO\Weight-CADO.bbl
+(d:\CTEX\MiKTeX\tex\latex\base\omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
+ [4] [5] [6] [7]
+Overfull \hbox (37.15135pt too wide) in paragraph at lines 191--193
+\OT1/cmr/m/n/10 For ex-am-ple, in Ta-ble 1[], we have $\OML/cmm/m/it/10 []\OT1
+/cmr/m/n/10 (\OML/cmm/m/it/10 Stewart; DeNiro\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/
+10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 DeNiro; DeNiro\OT1/cmr/m/n/10 ) =$
+ []
 
-Package natbib Warning: Empty `thebibliography' environment on input line 8.
+[8]
+Overfull \hbox (9.1622pt too wide) detected at line 233
+\OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m/n/1
+0 f\OML/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10
+ []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/1
+0  \OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m
+/n/10 f\OML/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 )[]
+ []
 
-) [3] (E:\我的文件\大数据挖掘\论文\Weight-CADO\Weight-CADO.aux) ) 
+[9] [10] [11] [12] [13]
+Overfull \hbox (52.13339pt too wide) in paragraph at lines 357--414
+ [][] 
+ []
+
+[14] [15] [16]
+(E:\我的文件\大数据挖掘\论文\Weight-CADO\Weight-CADO.aux) ) 
 Here is how much of TeX's memory you used:
- 2888 strings out of 495354
- 36940 string characters out of 3183859
- 94287 words of memory out of 3000000
- 5992 multiletter control sequences out of 15000+200000
- 12840 words of font info for 49 fonts, out of 3000000 for 9000
+ 2984 strings out of 495354
+ 37988 string characters out of 3183859
+ 107732 words of memory out of 3000000
+ 6080 multiletter control sequences out of 15000+200000
+ 14079 words of font info for 53 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,8n,30p,942b,250s stack positions out of 5000i,500n,10000p,200000b,50000s
-<d:
-/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/CTEX/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmr12.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/CTEX/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmr9.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><
-d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><d:/CTEX/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmti7.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmti8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><d:/CTEX/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on Weight-CADO.pdf (3 pages, 148128 bytes).
+ 42i,12n,30p,1017b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
+<d:/CTEX/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/CTEX/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmbx5.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7
+.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/CTEX/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/CTEX/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmmi5.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><d
+:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/CTEX/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmr5.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/CTEX/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr9.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><d:/CTEX/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmsy6.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmsy7.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><d:/CTEX/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmti7.pfb><d:/CTEX/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmti8.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.
+pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on Weight-CADO.pdf (16 pages, 309067 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
+ 142 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

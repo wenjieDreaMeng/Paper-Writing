@@ -8,6 +8,7 @@
 \usepackage{algorithmic}
 \usepackage{epsfig}
 \usepackage{epstopdf}
+\usepackage{multirow}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
 \newtheorem{proof}{Proof}
@@ -41,8 +42,7 @@ Education, School of Computer and Information Technology, Shanxi
 University, Taiyuan 030006, China}
 
 \begin{abstract}
-Attribute independence has been taken as a major assumption in the limited research that has been conducted on similarity analysis for categorical data. However, in real-world data sources,attribute are more or less associated with each other in terms of certain coupling relationships.This paper proposes a weighting distance learning approach that generates a coupled attribute similarity measure for nominal objects with attribute couplings to capture a global picture of attribute similarity.It involves the frequency-based intra-coupled similarity within an attribute and the inter-coupled similarity upon value co-occurrences between attribute as well as their integration on the object level.Substantial experiments on extensive
-UCI data sets verify the theoretical conclusions.The experimental results show that the similarity measure proposed in this paper has a good effect on clustering data clustering.
+Attribute independence has been taken as a major assumption in the limited research that has been conducted on similarity analysis for categorical data. However, in real-world data sources,attribute are more or less associated with each other in terms of certain coupling relationships. This paper proposes a weighting distance learning approach that generates a coupled attribute similarity measure for nominal objects with attribute couplings to capture a global picture of attribute similarity. It involves the frequency-based intra-coupled similarity within an attribute and the inter-coupled similarity upon value co-occurrences between attribute as well as their integration on the object level. Substantial experiments on extensive UCI data sets verify the theoretical conclusions. The experimental results show that the similarity measure proposed in this paper has a good effect on clustering data clustering.
 \end{abstract}
 \begin{keyword}
 Clustering, Coupled attribute similarity, Weighting similarity learning
@@ -54,40 +54,387 @@ Clustering, Coupled attribute similarity, Weighting similarity learning
 
 　　Similarity analysis has been a problem of great practical importance in several domains for decades, not least in recent work, including behavior analysis, document analysis, and image analysis. A typical aspect of these applications is clustering. The similarity between clusters is often built on top of the similarity between data objects. The similarity between attribute values assesses the relationship between two data objects and even between two clusters. The more two objects or clusters resemble each other, the lager is the similarity. The other similarity between attributes can also be converted into the difference of similarities between pairwise attribute values. Therefore, the similarity between attribute values plays a fundamental role in similarity analysis.
 
-    Compared with the intensive study on the similarity between two numerical variables, such as Euclidean and Minkowski distance, the similarity for categorical data has received much less attention. Only limited efforts have been made, including SMS, which uses 0s and 1s to distinguish the similarity between distinct and identical categorical values, occurrence frequency (OF) and information-theoretical similarity (Lin), to discuss the similarity between nominal values. The challenge is that these methods are too rough to precisely characterize the similarity between categorical attribute values, and only deliver a local picture of the similarity. In addition, none of them provides a comprehensive similarity between categorical attributes by combining relevant aspects.A real database application example is described in Table \ref{tab:ali data}.
-    \begin{table}[!h]\tabcolsep=0.065in
+Compared with the intensive study on the similarity between two numerical variables, such as Euclidean and Minkowski distance, the similarity for categorical data has received much less attention. Only limited efforts have been made, including SMS, which uses 0s and 1s to distinguish the similarity between distinct and identical categorical values, occurrence frequency (OF) and information-theoretical similarity (Lin), to discuss the similarity between nominal values. The challenge is that these methods are too rough to precisely characterize the similarity between categorical attribute values, and only deliver a local picture of the similarity. In addition, none of them provides a comprehensive similarity between categorical attributes by combining relevant aspects. A real database application example is described in Table \ref{tab:movie data}.
+\begin{table}[!h]\tabcolsep=0.065in
 \centering
-\caption{INSTANCE OF THE MOVIE DATABASE}
+\caption{Instance Of The Movie Database}
 \small
 %\tiny
-\label{tab:ali data}
+\label{tab:movie data}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
-\emph{Movie}&\emph{Director}&\emph{Actor}&\emph{Genre}&\emph{Class} \\
+\emph{Movie}&\emph{Actor}&\emph{Genre}&\emph{Director}&\emph{Class} \\
 \hline
-Godfaher II & Scorsese & De Niro & Crime & L1 \\
+Godfaher II & De Niro & Crime & Scorsese & L1 \\
 \hline
-Good Fellas & Coppola & De Niro & Crime & L1 \\
+Good Fellas & De Niro & Crime & Coppola & L1 \\
 \hline
-Vertigo & Hitchcock & Stewart & Thriller & L2 \\
+Vertigo & Stewart & Thriller & Hitchcock & L2 \\
 \hline
-N by NW & Hitchcock & Grant & Thriller & L2 \\
+Harvey & Stewart & Comedy & Koster & L2 \\
 \hline
-Bishop's Wife & Koster & Grant & Comedy & L2 \\
+N by NW & Grant & Thriller & Hitchcock & L2 \\
 \hline
-Harvey & Koster & Stewart & Comedy & L2 \\
+Bishop's Wife & Grant & Comedy & Koster & L2 \\
 \hline
 \end{tabular}
 \end{table}
 
-As shown in Table \ref{tab:ali data}, six movie objects are divided into two classes with three nominal attributes. The SMS measure between directors Scorsese and Coppola is 0, but Scorsese and Coppola are very similar.
-Can Wang has put forward an effective method to improve the shortcomings of the above algorithms.
+As shown in Table \ref{tab:movie data}, six movie objects are divided into two classes with three nominal attributes. The SMS measure between the value of Actor of Vertigo's Stewart and the value of Actor of N by NW's Grant is 0, but Stewart and Grant are very similar. Another observation by following SMS is that the similarity between Stewart and Grant is equal to that between De Niro and Stewart; however, the similarity of the former pair should be greater because both Actor belong of the same class L2.
 
+The above examples show that it is much more complex to analyse the similarity between nominal variables than between continuous data. The SMS and its variants fail to capture a global picture of the genuine relationship for nominal data. Can Wang has put forward an effective algorithm (CADO) to improve the shortcomings of the above algorithms. She make a point about the data-driven intra-coupled similarity and inter-coupled similarity, as well as their global aggregation in unsupervised learning on nominal data.
 
-\subsection{二级标题}
-　　正文
-\section*{附录}
-附录内容
-\bibliographystyle{elsarticle-num}
-\bibliography{temp}
+However, the measure of intra-coupled similarity in her method does not show the similarity in the same class and the dissimilarity between different classes, and the measure of relationship between attributes is not given in the CASO algorithm. For example, the CADO measure similarity between the value of Actor of Godfather II's De Niro and the value of Actor of Good Fellas's De Niro is 0.5 and the similarity between the value of Actor of Good Fellas's De Niro and the value of Actor of Vertigo's Stewart is the same. However, since both Actor of the former pair belong of the same class L1, so the similarity should be greater.
+
+In this paper, we explicitly discuss the distance measure for categorical data objects. This distance matrix takes into account the characteristics of the categorical values. The core idea is to measure the distance with the frequency probability of each attribute value in the whole data set. A new kind of weight named dynamic attribute weight has been presented to adjust the contribution of distance along each attribute to the whole object distance. Moreover, in order to utilize the useful relationship information accompanying with each pair of attributes well, the interdependence redundancy measure has been introduced to evaluate the dependence degree between different attributes. Subsequently, the distance between two values from one attribute is not only measured by their own frequency probabilities but also determined by the values of other attributes that are highly correlated with this one. The key contribution are as follows.
+
+\begin{itemize}
+  \item A dynamic weighting scheme for categorical attributes is presented, which assigns larger weights to the attributes with infrequent matching or mismatching value pairs as they can provide more important information.
+  \item The dependence degree between each pair of attributes is introduced. The complete distance between two categorical values from one attribute is estimated with not only their own frequency probability but also the co-occurrent probability with other values from highly correlated attributes.
+\end{itemize}
+
+This paper is organized as follows. In Section 2, we specify preliminary definitions. The dynamic attribute weight and the relationship between pair of attributes are given in Section 3. Section 4 defines the intra-coupled similarity, inter-coupled similarity, and their aggregation. We describe the Weight-CADO algorithm in Section 5. The effectiveness of Weight-CADO is empirically studied in Section 6 and a flexible method to define dissimilarity metrics is also developed. Finally, we conclude this paper in Section 7.
+
+\section{Preliminary Definitions}
+Given the data set $\mathbf{X} = \{x_1,x_2,\cdots,x_n\}$ with n objects represented by d categorical attributes $\mathbf\{A_1,A_2,\cdots,A_d\}$. $V_j$ is the set of attribute values from attribute $A_j (1 \leq i \leq d)$.
+
+Definition 1 ($p_r$): The probability of attribute r in presenting value equal to x$_{ir}$ in the object set X.
+\begin{equation}
+p(A_r = x_{ir}|X) = \frac{\sigma_{A_r = x_{ir}}(X)}{\sigma_{A_r \neq NULL}(X)}
+\label{equ1}
+\end{equation}
+Here, the operation $\mathbf{\sigma_{A_r = x_{ir}}(X)}$ counts the number of objects in the data set X that have the value $\mathbf{x_{ir}}$ for attribute $\mathbf{A_{r}}$ and the symbol NULL refers to the empty. $\mathbf{x_{ir}}$ is the categorical value of attribute $\mathbf{A_{r}}$ from data objects $\mathbf{x_{i}}$.
+
+Definition 2 ($p_r^-$): The estimated probability of attribute r in presenting a value equal to x$_{ir}$ in the object set X.
+\begin{equation}
+p^-(A_r = x_{ir}|X) = \frac{\sigma_{A_r = x_{ir}}(X) - 1}{\sigma_{A_r \neq NULL}(X) - 1}
+\label{equ2}
+\end{equation}
+For example, based on the attribute Actor in Table \ref{tab:movie data}, $p(A_{Actor} = Stewart|X)$ = $\frac{1}{3}$,  $p^-(A_{Actor} = Stewart|X)$ = $\frac{1}{5}$.
+
+Definition 3 (ICP): The value subject $\acute{V_k} (\subseteq V_k)$ of attribute $A_k$, and the value $v_j (\in V_j)$ of attribute $A_j$, then the information conditional probability (ICP) of $\acute{V_k}$ with respect to $v_j$ is $P_{k|j}(\acute{V_k} | v_j)$, defined as
+\begin{equation}
+P_{k|j}(\acute{V_k} | v_j) = \frac{\sigma_{A_k = \acute{V_k}} \wedge \sigma_{A_j = v_j}(X)}{\sigma_{A_j = v_j}(X)}
+\label{equ3}
+\end{equation}
+Intuitively, when given all the objects with the value $v_j$ of attribute $A_j$, ICP is the percentage of common objects whose values of attribute $A_j$ fall in subset $\acute{V_k}$ and whose values of attribute $a_j$ are exactly $v_j$ as well. Hence, ICP quantifies the relative overlapping ratio of attribute values in terms of objects. for example, $P_{Actor|Genre}(Grant | Thriller) = 0.5$.
+
+\section{Proposed Weight Metric for Categorical Data}
+\subsection{Dynamic Attribute Weight}
+It's a very common situation that each attribute have it's special features for categorical data in a data set. That is, unusual features generally can provide more information for the comparison between objects and we pay more attention to these special features they have. Considering this phenomenon, we can further adjust the distance metric according to following criterion. The contribution of the distance is inverse to the probability of these two value's situation in the whole data set. That is, if two data objects have different values along one attribute, then the contribution of the distance between these two values to the whole data distance is inverse to the probability that two data objects have different values along this attribute in the data set, and vice versa. Therefore, this kind of probability can be utilized as a dynamic weight of attribute distance.
+
+For an attribute $A_r$ with $m_r$ possible values, the probability that two data objects form X have the same value along $A_r$ is calculated by
+\begin{equation}
+p_s(A_r) = \sum_{j=1}^{m_r}p(A_r = a_{rj}|X)p^-(A_r = a_{rj}|X)
+\label{equ4}
+\end{equation}
+Correspondingly, the probability that two data objects from X have different values along $A_r$ is given by
+\begin{equation}
+p_f(A_r) = 1 - p_s(A_r)
+\label{equ5}
+\end{equation}
+Subsequently, following the proposed criterion, the dynamic weight of attribute $A_r$ should be:
+\begin{equation}
+\label{equ6}
+\omega(A_r)=
+\left\{\begin{array}{cc}
+  p_s(A_r), & if\ \ x_{ir} = x_{jr} \\
+  p_f(A_r), & otherwise \\
+  \end{array} \right.
+\end{equation}
+
+\subsection{Relationship Between Categorical Attributes}
+Most existing distance or similarity metrics for categorical data treat each attribute individually. However, in real data, we often have some attributes that are highly dependent on each other. So, the computation of similarity or distance for categorical attribute should be considered based on frequently co-occurring items. That is, the similarity between two values from one attribute should be calculated by considering the other attributes that are highly correlated with this one. In particular, given the data set X, the dependence degree between each pair of attributes $A_i$  and $A_j$ $\mathbf (i,j \in \{1,2,\cdots,d\})$ can be quantified based on the mutual information between them, which is defined as
+\begin{equation}
+I(A_i;A_j) = \sum_{r=1}^{m_i}\sum_{l=1}^{m_j}p(a_{ir},a_{jl})\log(\frac{p(a_{ir},a_{jl})}{p(a_{ir})p(a_{jl})})
+\label{equ7}
+\end{equation}
+Here, the items $p(a_ir)$ and $p(a_jl)$ stand for the frequency probability of the two attribute values in the while data set, which are calculated by
+\begin{equation}
+p(a_{ir}) = p(A_i = a_{ir}|X) = \frac{\sigma_{A_i = a_{ir}}(X)}{\sigma_{A_i \neq NULL}(X)}
+\label{equ8}
+\end{equation}
+\begin{equation}
+p(a_{jl}) = p(A_j = a_{jl}|X) = \frac{\sigma_{A_j = a_{jl}}(X)}{\sigma_{A_j \neq NULL}(X)}
+\label{equ9}
+\end{equation}
+The expression $p(a_{ir},a_{jl})$ is to calculate the joint probability of these two attribute values, i.e., the frequency probability of objects in X having $A_i = a_{ir}$ and $A_j = a_{jl}$, which is given by
+\begin{equation}
+p(a_{ir},a_{jl}) = p(A_i = a_{ir} \wedge A_j = a_{jl}|X) = \frac{\sigma_{A_i = a_{ir}} \wedge \sigma_{A_j = a_{jl}}(X)}{\sigma_{A_i \neq NULL} \wedge \sigma_{A_j \neq NULL}(X)}
+\label{equ10}
+\end{equation}
+The mutual information between two attributes actually measures the average reduction in uncertainty about one attribute that results from learning the value of the other. A larger value of mutual information usually indicates greater dependence. However, a disadvantage of using this index is that its value increase with the number of possible values that can be chosen by each attribute. Therefore, Au et al. proposed to normalize the mutual information with a joint entropy, which yields the interdependence redundancy measure denoted as
+\begin{equation}
+R(A_i;A_j) = \frac{I(A_i;A_j)}{H(A_i;A_j)}
+\label{equ11}
+\end{equation}
+where the joint entropy $H(A_i,A_j)$ is calculated by
+\begin{equation}
+H(A_i;A_j) = - \sum_{r=1}^{m_i}\sum_{l=1}^{m_j}p(a_{ir},a_{jl})\log(p(a_{ir},a_{jl}))
+\label{equ12}
+\end{equation}
+This interdependence redundancy measure evaluates the degree of deviation from independence between two attributes. In particular, $R(A_i;A_j) = 1$ means that the attributes $A_i$ and $A_j$ are strictly dependent on each other while $R(A_i;A_j) = 0$ indicates that they are statistically independent. If the value of $R(A_i;A_j)$ is between 0 and 1, we can say that these two attributes are partially dependent. Since the number of attribute values has no effect on the result of independence redundancy measure,it is perceived as a more ideal index to measure the dependence degree between different categorical attributes.
+
+In the process of experiments, we maintain a $d*d$ relationship matrix $R$ to store the dependence degree of each pair of attributes. Each element $R(i,j)$ of this matrix is given by $R(i,j) = R(A_i;A_j)$. It is obvious that $R$ is a symmetric matrix with all diagonal elements equal to 1. To consider the independent attributes simultaneously in distance measure, for each attribute $A_r$, we find out all the attributes that have obvious interdependence with it and store them in a set denoted as $S_r$. In particular, the set $S_r$ is constructed by
+\begin{equation}
+S_r = \{A_i|R(A_r;A_i) > \beta, 1 \leq i \leq d \}
+\label{equ13}
+\end{equation}
+where $\beta$ is a specific threshold.
+
+\section{Coupled Attribute Similarity}
+\subsection{Intra-Coupled Interaction}
+According to CADO algorithm, the intra-coupled attribute similarity for values (IaASV) between values $x_{ir}$ and $x_{jr}$ for attribute $A_r$ is
+\begin{equation}
+\delta_{r}^{IaASV}(x_{ir},x_{jr}) = \frac{\sigma_{A_r = x_{ir}}(X) \cdot \sigma_{A_r = x_{jr}}(X)}{\sigma_{A_r = x_{ir}}(X) + \sigma_{A_r = x_{jr}}(X) + \sigma_{A_r = x_{ir}}(X) \cdot \sigma_{A_r = x_{jr}}(X)}
+\label{equ14}
+\end{equation}
+For example, in Table \ref{tab:movie data}, we have $\delta_{Actor}^{Ia}(Stewart,De Niro) = \delta_{Actor}^{Ia}(De Niro,De Niro) = 0.5$ since both De Niro and Stewart appear twice.
+
+However, the measure of intra-coupled similarity in CADO algorithm does not show the similarity in the same class and the dissimilarity between different classes. For instance, the similarity of the Godfather II's De Niro and Good Fellas's De Niro should be greater than the Good Fellas's De Niro and Harvey's Stewart because Godfather's Actor and Good Fellas's Actor belong to the same class L1.
+
+Here, Wang consider $h_1(t) = 1/t - 1$ to reflect the complementarity between similarity and dissimilarity measures. In the algorithm proposed in this paper, we use it too. To overcome the shortcomings of CADO algorithm, we use the dynamic attribute weight we just described in Section 3. Subsequently, the weight intra-coupled attribute dissimilarity for values (Weight-IaADV) between values $x_{ir}$ and $x_{jr}$ for attribute $A_r$ is
+\begin{equation}
+\label{equ15}
+\delta_{r}^{W-IaADV}(x_{ir},x_{jr}) =
+\left\{\begin{array}{cc}
+  p_s(A_r) * (\frac{1}{IaASV} - 1), & if\ \ x_{ir} = x_{jr} \\
+  p_f(A_r) * (\frac{1}{IaASV} - 1), & otherwise \\
+  \end{array} \right.
+\end{equation}
+
+\subsection{Inter-Coupled Interaction}
+According to CADO algorithm, the inter-coupled attribute similarity for values (IeASV) between attribute value $x_{ir}$ and $x_{jr}$ of attribute $A_r$ is
+\begin{equation}
+\delta_{r}^{IeASV}(x_{ir},x_{jr},\{V_k\}_{k \neq j}) = \sum_{k=1,k \neq j}^{d} \alpha_k \delta_{j|k}(x_{ir},x_{jr},V_k)
+\label{equ16}
+\end{equation}
+where $\alpha_k$ is the weight parameter for attribute $A_k$. In CADO algorithm, author assign $\alpha_k = \frac{1}{d-1}$. Here, Wang consider $h_2(t) = 1 - t$ to reflect the complementarity between similarity and dissimilarity measures.
+
+However, this assignment method does not take into account the degree of correlation between the different columns. To overcome the shortcomings of CADO algorithm, we use the relationship matrix we just described in Section 3.
+Subsequently, the weight inter-coupled attribute similarity for values (Weight-IeASV) between values $x_{ir}$ and $x_{jr}$ for attribute $A_r$ is
+\begin{equation}
+\delta_{r}^{W-IeASV}(x_{ir},x_{jr},\{V_k\}_{k \neq j}) = \sum_{k=1,k \neq j}^{d} R(j,k) \delta_{j|k}(x_{ir},x_{jr},V_k)
+\label{equ17}
+\end{equation}
+In order to make dissimilarity measure satisfy nonnegativity, the weight inter-coupled attribute dissimilarity for values (Weight-IeADV) between values $x_{ir}$ and $x_{jr}$ for attribute $A_r$, that is, the convert between similarity and dissimilarity measure, is
+\begin{equation}
+\delta_{r}^{W-IeADV}(x_{ir},x_{jr},\{V_k\}_{k \neq j}) = \sum_{k=1,k \neq j}^{d} R(j,k) - \delta_{r}^{W-IeASV}
+\label{equ18}
+\end{equation}
+
+\subsection{Coupled Interaction}
+So far, we have build formal definitions for both Weight-IaADV and Weight-IeADV measures. The Weight-IaADV emphasizes the attribute value OF, while Weight-IeADV focuses on the co-occurrence comparison of ICP with inter-coupled relative similarity options. Then, the Weight-CADV is naturally derived by simultaneously considering both measures.
+
+The Weight-CADV between attribute values $x_{ir}$ and $x_{jr}$ of attribute $A_r$ is
+\begin{equation}
+\delta_{r}^{W-CADV}(x_{ir},x_{jr},\{V_k\}_{k = 1} ^ n) = \delta_{r}^{W-IaADV}(x_{ir},x_{jr}) \cdot \delta_{r}^{W-IeADV}(x_{ir},x_{jr},\{V_k\}_{k \neq j})
+\label{equ19}
+\end{equation}
+where $V_k (k \neq j)$ is a value set of attribute $A_k$ different from $A_j$ to enable the weight inter-coupled interaction. $\delta_{r}^{W-IaADV}$ and $\delta_{r}^{W-IeADV}$ are Weight-IaADV and Weight-IeADV.
+
+As indicated in Eq.(\ref{equ19}), we choose the multiplication of these two components. Weight-IaADV is associated with how often the value occurs, while Weight-IeADV reflects the extent of the value difference brought by other attributes, hence intuitively, the multiplication of them indicates the total amount of attribute value difference. Alternatively, we could consider other combination forms of Weight-IaADV and Weight-IeADV according to the data structure, such as $\delta_{r}^{W-CADV}(x_{ir},x_{jr},\{V_k\}_{k = 1} ^ n) = \alpha \cdot \delta_{r}^{W-IaADV}(x_{ir},x_{jr}) + \gamma \cdot \delta_{r}^{W-IeADV}(x_{ir},x_{jr},\{V_k\}_{k \neq j})$, where $0 \leq \alpha,\gamma \leq 1 (\alpha+\gamma = 1)$
+are the corresponding weights. Thus, Weight-IaADV and Weight-IeADV can be controlled flexibly to display in which cases the intra-coupled interaction is more significant than the inter-coupled interaction, and vice versa.
+
+\section{Coupled Dissimilarity Algorithm}
+In previous sections, we have discussed the construction of Weight-CADV. In this section, a coupled dissimilarity between objects is built based on Weight-CADV. Below, we consider the sum of all these Weight-CADV measures.
+
+Given the data set X, the Weight-CADO between object $x_i$ and $x_j$ is Weight-CADO($x_i$,$x_j$)
+\begin{equation}
+Weight-CADO(x_i,x_j) = \sum_{r=1}^{d}\delta_r^{W-CADV}(x_{ir},x_{jr},\{V_k\}_{k = 1} ^ n)
+\label{equ20}
+\end{equation}
+
+\begin{algorithm}[!ht]
+  \caption{Weight Coupled Attribute Dissimilarity for Objects}
+  \label{alg:Weight-CADO}
+  \begin{algorithmic}[1]
+   \STATE {\bfseries Input:} data set ${X = \{x_1,x_2,\cdots,x_n\}}$.
+   \STATE {\bfseries Output:} ${D(x_i,x_j)}$ for ${i,j \in \{1,2,\cdots,n\}}$.
+   \STATE Calculate ${p_s(A_r)}$ and ${p_f(A_r)}$ for each attribute ${A_r}$ according to Eq.(\ref{equ4}) and Eq.(\ref{equ5}).
+   \STATE For each pair of attributes ${(A_r,A_l)(r,l \in \{1,2,\cdots,d\})}$ calculate ${R(A_r;A_l)}$ according to Eq.(\ref{equ11}).
+   \STATE Construct the relationship matrix ${R}$.
+   \STATE Get the index set ${S_r}$ for each attribute ${A_r}$ by ${S_r = \{l|R(r,l) > \beta, 1 \leq l \leq d\}}$.
+   \STATE Choose two objects ${x_i}$ and ${x_j}$ from ${X}$.
+   \STATE Let ${D(x_i,x_j)}$ = 0.
+   \FOR {$attribute$ $a_r,$ $r=1$ $to$ $n$}
+   \STATE // Compute the weight intra-coupled dissimilarity for two attribute values $x_{ir}$ and $x_{jr}$
+   \STATE Weight-IaADV = $\delta_{r}^{W-IaADV}(x_{ir},x_{jr})$;
+   \FOR {every value pair ($x_{ir},x_{jr} \in [1,\delta_{A_r}]$)}
+   \STATE //Compute the weight inter-coupled dissimilarity for two attribute values $x_{ir}$ and $x_{jr}$
+   \STATE Weight-IeADV = $\delta_{r}^{W-IeADV}(x_{ir},x_{jr},\{V_k\}_{k \neq j})$;
+   \ENDFOR
+   \STATE //Compute coupled dissimilarity between two attribute values $x_{ir}$ and $x_{jr}$
+   \STATE Weight-CADV = Weight-IaADV $\cdot$ Weight-IeADV;
+   \ENDFOR
+   \STATE //Compute coupled similarity between two objects $x_{i}$ and $x_{j}$
+   \STATE Weight-CADO = sum(Weight-CADV);
+   \STATE ${D(x_i,x_j)}$ = Weight-CADO;
+   \STATE return ${D(x_i,x_j)}$;
+\end{algorithmic}
+\end{algorithm}
+We then design an algorithm Weight-CADO, given in Algorithm 1, to compute the coupled object dissimilarity. The whole process of this algorithm is summarized as follows:
+\begin{itemize}
+  \item Compute the Weight-IaADV for attributes $(x_{ir}$ and $x_{jr})$ of attribute $A_r$;
+  \item Compute the Weight-IeADV for attribute values $(x_{ir}$ and $x_{jr})$;
+  \item Compute the Weight-CADV for attribute values $(x_{ir}$ and $x_{jr})$;
+  \item Compute the Weight-CADO for objects $x_{i}$ and $x_{j}$;
+\end{itemize}
+
+\section{Experiments}
+To investigate the effectiveness of the distance metric for the categorical data proposed in this paper, we mainly make some experiments on the five UCI data sets, Balloons data set, Soybean-small data set, Zoo data set, Congressional Voting Records data set and Breast Cancer data set. We firstly describe the preprocessing process of the five data sets. Then five evaluation indexes are introduced. Finally, we show the comparison results of the Weight-CADO algorithm with other algorithms.
+
+In our experiments, the value of the threshold parameter $\beta$ in the proposed metric was set equal to the average interdependence redundancy of all attribute pairs. That is, we let $\beta$ = $\beta_0$, where $\beta_0$ is calculated by
+\begin{equation}
+\beta = \frac{1}{d^2}\sum_{i=1}^{d}\sum_{j=1}^{d}R(A_i;A_j),
+\label{equ21}
+\end{equation}
+
+\subsection{Data Description}
+The information of the data sets we utilized is as follows.
+\begin{itemize}
+  \item Balloons Data Set: There are 20 instances based on 4 attributes and each sample labeled with T or F.
+  \item Soybean-small Data Set: There are 47 instances characterized by 35 multivalued categorical attributes. According to the different kinds of diseases, all the instances should be divided into four groups.
+  \item Zoo Data Set: This data set consists 101 instances represented by 16 attributes, in which each instance belongs to one of the seven animal categories.
+  \item Congressional Voting Records Data Set: There are 435 votes based on 16 key features and each vote comes from one of the two different party affiliations.
+  \item Breast Cancer Data Set: This data set has 699 instances described by nine categorical attributes with the values from 1 to 10. Each instance belongs to one of the two clusters labeled by benign and malignant. 
+\end{itemize}
+
+\subsection{Evaluation Indexes}
+To evaluate the effectiveness of the Weight-CADO algorithm, we used the following five external criterions: (1) adjusted rand index (ARI) \cite{liang2012means}, (2) normalized mutual information (NMI) \cite{strehl2003cluster}, (3) accuracy (AC), (4) precision (PR) and (5) recall (RE) to compare the obtained cluster of each object with that provided by data label.
+
+Let $\textbf{X}$ be a matrix-object data set, $C=\{C_1,C_2,\cdots,C_k'\}$ be a clustering result of $\textbf{X}$, $P=\{P_1,P_2,\cdots,P_k\}$ be a real partition in $\textbf{X}$. The overlap between $C$ and $P$ can be summarized in a contingency table shown in Table \ref{tab-cont}, where $n_{ij}$ denotes the number of objects in common between $P_i$ and $C_j$, $n_{ij}=|P_i \bigcap C_j|$. $p_i$ and $c_j$ are the number of objects in $P_i$ and $C_j$, respectively.
+\begin{table}[!h]
+\centering
+
+\caption{The contingency table.}
+\label{tab-cont}
+\begin{tabular}{cccccc}
+\hline\noalign{\smallskip}
+  &  $C_1$ & $C_2$ .....& $\cdots$ & $C_{k'}$ & $Sums$\\
+\hline
+$P_1$ & $n_{11}$ & $n_{12}$ &  $\cdots$ & $n_{1k'}$  & $p_1$\\
+
+$P_2$     & $n_{21}$ & $n_{22}$ &  $\cdots$ & $n_{2k'}$  & $p_2$\\
+
+$\vdots$  & $\vdots$ & $\vdots$ &  $\ddots$ & $\vdots$  & $\vdots$\\
+
+$P_k$  & $n_{k1}$ & $n_{k2}$ & $\cdots$ & $n_{kk'}$  & $p_{k}$\\
+
+$Sums$      & $c_1$     &  $c_2$    & $\cdots$ & $c_{k'}$  & $n$ \\
+
+\hline
+\end{tabular}
+\end{table}
+
+The five evaluation indexes are defined as follows:
+
+$$ARI=\frac{\sum_{ij}C_{n_{ij}}^{2}-[\sum_i C_{p_i}^2 \sum_j  C_{c_j}^2]/C_n^2}
+{\frac{1}{2}[\sum_i C_{p_i}^2+\sum_j C_{c_j}^2]-[\sum_iC_{p_i}^2 \sum_j C_{c_j}^2]/C_n^2},$$
+
+$$NMI=\frac{\sum_{i=1}^k\sum_{j=1}^{k'}n_{ij}log(\frac{n_{ij}n}{p_{i}c_{j}})}
+         {\sqrt{\sum_{i=1}^{k}p_{i}log(\frac{p_i}{n})\sum_{j=1}^{k'}c_{j}log(\frac{c_j}{n})}},$$
+
+$$AC=\frac{1}{n}\max\limits_{j_1 j_2 \cdots j_k \in S}\sum_{i=1}^{k}n_{ij_i},$$
+
+$$PE=\frac{1}{k}\sum_{i=1}^{k}\frac{n_{ij_i^*}}{p_i},$$
+
+$$RE=\frac{1}{k'}\sum_{i=1}^{k'}\frac{n_{ij_i^*}}{c_{i}},$$
+
+where  $n_{1j_1^*}+n_{2j_2^*}+\cdots+n_{kj_k^*}=\max\limits_{j_1 j_2 \cdots j_k \in S}\sum_{i=1}^{k}n_{ij_i}\ \ (j_1^* j_2^* \cdots j_k^* \in S)$ and $S=\{j_1j_2 \cdots j_k: j_1,j_2, \cdots, j_k \in \{1,2,\cdots,k\}$, $j_i\neq j_t$ for $i\neq t$ $\}$ is a set of all permutations of $1,2,\cdots,k$. For $AC, PE, RE$, $k$ is equal to $k'$ in general case. In addition, we consider that the higher the values of $ARI$, $NMI$, $AC$, $PE$ and $RE$ are, the better the clustering solution is.
+
+\subsection{Comparisons between CADO Alogrithm and Weight-CADO Alogrithm}
+One of the clustering approaches is the KM algorithm, designed to cluster categorical data sets. The main idea of KM is to specify the number of clusters $k$ and then to select $k$ initial modes, followed by allocating every objects to the nearest mode. The other is a branch of graph-based clustering, i.e., SC, which makes use of Laplacian Eigenmaps on a dissimilarity matrix to perform dimensionality reduction for clustering before the k-means algorithm. Below, we aim to compare the performance of Weight-CADO against CADO as used in data cluster analysis for further clustering evaluation.
+
+Table \ref{tab:Clustering Evaluation On Five Data Sets} reports the results on five data sets with different scale, ranging from 20 to 699 in the increasing order. For each data, the average performance is computed over 100 tests for KM and SC with distinct start points. Note that the highest measure score of each experimental setting is highlighted in boldface.
+
+\begin{table}[!ht]\tabcolsep=0.065in
+\centering
+\caption{Clustering Evaluation On Five Data Sets}
+\small
+%\tiny
+\label{tab:Clustering Evaluation On Five Data Sets}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ \multirow{2}{*}{Evaluation Index} & \multirow{2}{*}{Data Set} & \multicolumn{2}{c|}{KM} & \multicolumn{2}{c|}{SC} \\
+ \cline{3-6}
+    & &CADO & Weight-CADO & CADO & Weight-CADO \\
+ \hline
+    \multirow{5}{*}{AC} & Balloons Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Soybean-small Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Zoo Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Voting Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Breast Cancer Data Set & label-2 & label-3 & label-4 & label-5 \\
+ \hline
+     \multirow{5}{*}{NMI} & Balloons Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Soybean-small Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Zoo Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Voting Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Breast Cancer Data Set & label-2 & label-3 & label-4 & label-5 \\
+ \hline
+      \multirow{5}{*}{ARI} & Balloons Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Soybean-small Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Zoo Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Voting Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Breast Cancer Data Set & label-2 & label-3 & label-4 & label-5 \\
+ \hline
+      \multirow{5}{*}{PR} & Balloons Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Soybean-small Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Zoo Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Voting Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Breast Cancer Data Set & label-2 & label-3 & label-4 & label-5 \\
+ \hline
+      \multirow{5}{*}{RE} & Balloons Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Soybean-small Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Zoo Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Voting Data Set & label-2 & label-3 & label-4 & label-5 \\
+    \cline{2-6}
+    & Breast Cancer Data Set & label-2 & label-3 & label-4 & label-5 \\
+ \hline
+ \end{tabular}
+ \end{table}
+ 
+ As Table \ref{tab:Clustering Evaluation On Five Data Sets} indicates, the clustering methods with Weight-CADO, whether KM or SC, outperform those with CADO on both AC,NMI,PR,RE and ARI. The reason is that the effect of the weight inter-coupled interaction of categorical attributes is 
+
+\section*{References}
+%\bibliography{reference}
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{liang2012means}
+J.~Liang, L.~Bai, C.~Dang, F.~Cao, The $k$-means type algorithms versus
+  imbalanced data distributions, IEEE Transactions on Fuzzy Systems 20~(4)
+  (2012) 728--745.
+
+\bibitem{strehl2003cluster}
+A.~Strehl, J.~Ghosh, Cluster ensembles---a knowledge reuse framework for
+  combining multiple partitions, The Journal of Machine Learning Research 3
+  (2003) 583--617.
+
+\end{thebibliography}
+
 \end{document}
+
