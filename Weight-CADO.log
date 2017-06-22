@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.5.29)  22 JUN 2017 17:51
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.5.27)  22 JUN 2017 21:53
 entering extended mode
-**E:/我的文件/大数据挖掘/论文/Weight-CADO/Weight-CADO.tex
-(E:/我的文件/大数据挖掘/论文/Weight-CADO/Weight-CADO.tex
+**G:/7、大数据挖掘/论文/Weight-CADO/Weight-CADO.tex
+(G:/7、大数据挖掘/论文/Weight-CADO/Weight-CADO.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
-(d:\CTEX\MiKTeX\tex\latex\elsarticle\elsarticle.cls
+(D:\CTEX\UserData\tex\latex\elsarticle\elsarticle.cls
 Document Class: elsarticle 2009/09/17, 1.2.0: Elsevier Ltd
 \@bls=\dimen102
-(d:\CTEX\MiKTeX\tex\latex\base\article.cls
+(D:\CTEX\MiKTeX\tex\latex\base\article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(d:\CTEX\MiKTeX\tex\latex\base\size10.clo
+(D:\CTEX\MiKTeX\tex\latex\base\size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -24,31 +24,31 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen103
 )
-(d:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
+(D:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(d:\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
+(D:\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(d:\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
+(D:\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(d:\CTEX\MiKTeX\tex\latex\graphics\trig.sty
+(D:\CTEX\MiKTeX\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(d:\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
+(D:\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(d:\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
+(D:\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(d:\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty
+(D:\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
-(d:\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
+(D:\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
 Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count87
@@ -56,16 +56,16 @@ Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
-(d:\CTEX\MiKTeX\tex\latex\psnfss\pifont.sty
+(D:\CTEX\MiKTeX\tex\latex\psnfss\pifont.sty
 Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
 LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
 
-(d:\CTEX\MiKTeX\tex\latex\psnfss\upzd.fd
+(D:\CTEX\MiKTeX\tex\latex\psnfss\upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
 LaTeX Font Info:    Try loading font information for U+psy on input line 64.
 
-(d:\CTEX\MiKTeX\tex\latex\psnfss\upsy.fd
+(D:\CTEX\MiKTeX\tex\latex\psnfss\upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
 \c@tnote=\count88
@@ -86,8 +86,8 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 \@sep=\skip43
 \@@sep=\skip44
 
-(E:\我的文件\大数据挖掘\论文\Weight-CADO\Weight-CADO.spl)
-(d:\CTEX\MiKTeX\tex\latex\natbib\natbib.sty
+(G:\7、大数据挖掘\论文\Weight-CADO\Weight-CADO.spl)
+(D:\CTEX\UserData\tex\latex\natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip45
 \bibsep=\skip46
@@ -96,7 +96,7 @@ LaTeX Info: Redefining \cite on input line 694.
 )
 \splwrite=\write3
 )
-(d:\CTEX\MiKTeX\tex\latex\lineno\lineno.sty
+(D:\CTEX\UserData\tex\latex\lineno\lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \linenopenalty=\count95
 \output=\toks17
@@ -114,10 +114,10 @@ Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \bframebox=\box30
 LaTeX Info: Redefining \\ on input line 3056.
 )
-(d:\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
+(D:\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
 Package: amssymb 2009/06/22 v3.00
 
-(d:\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+(D:\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks18
 \symAMSa=\mathgroup4
@@ -125,11 +125,11 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-(d:\CTEX\MiKTeX\tex\latex\algorithms\algorithm.sty
+(D:\CTEX\UserData\tex\latex\algorithms\algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
-(d:\CTEX\MiKTeX\tex\latex\float\float.sty
+(D:\CTEX\MiKTeX\tex\latex\float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count102
 \float@exts=\toks19
@@ -137,13 +137,13 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks20
 \@floatcapt=\box32
 )
-(d:\CTEX\MiKTeX\tex\latex\base\ifthen.sty
+(D:\CTEX\MiKTeX\tex\latex\base\ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks21
 \c@algorithm=\count103
 )
-(d:\CTEX\MiKTeX\tex\latex\algorithms\algorithmic.sty
+(D:\CTEX\UserData\tex\latex\algorithms\algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \c@ALC@unique=\count104
 \c@ALC@line=\count105
@@ -152,33 +152,33 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \ALC@tlm=\skip47
 \algorithmicindent=\skip48
 )
-(d:\CTEX\MiKTeX\tex\latex\graphics\epsfig.sty
+(D:\CTEX\MiKTeX\tex\latex\graphics\epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 \epsfxsize=\dimen114
 \epsfysize=\dimen115
 )
-(d:\CTEX\MiKTeX\tex\latex\oberdiek\epstopdf.sty
+(D:\CTEX\MiKTeX\tex\latex\oberdiek\epstopdf.sty
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
 
-(d:\CTEX\MiKTeX\tex\latex\oberdiek\epstopdf-base.sty
+(D:\CTEX\MiKTeX\tex\latex\oberdiek\epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(d:\CTEX\MiKTeX\tex\latex\oberdiek\grfext.sty
+(D:\CTEX\MiKTeX\tex\latex\oberdiek\grfext.sty
 Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
 
-(d:\CTEX\MiKTeX\tex\generic\oberdiek\kvdefinekeys.sty
+(D:\CTEX\MiKTeX\tex\generic\oberdiek\kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
 ))
-(d:\CTEX\MiKTeX\tex\latex\oberdiek\kvoptions.sty
+(D:\CTEX\MiKTeX\tex\latex\oberdiek\kvoptions.sty
 Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
 
-(d:\CTEX\MiKTeX\tex\generic\oberdiek\kvsetkeys.sty
+(D:\CTEX\MiKTeX\tex\generic\oberdiek\kvsetkeys.sty
 Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
 
-(d:\CTEX\MiKTeX\tex\generic\oberdiek\etexcmds.sty
+(D:\CTEX\MiKTeX\tex\generic\oberdiek\etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
 
-(d:\CTEX\MiKTeX\tex\generic\oberdiek\ifluatex.sty
+(D:\CTEX\MiKTeX\tex\generic\oberdiek\ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -187,10 +187,10 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-(d:\CTEX\MiKTeX\tex\generic\oberdiek\pdftexcmds.sty
+(D:\CTEX\MiKTeX\tex\generic\oberdiek\pdftexcmds.sty
 Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
 
-(d:\CTEX\MiKTeX\tex\generic\oberdiek\ifpdf.sty
+(D:\CTEX\MiKTeX\tex\generic\oberdiek\ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
@@ -204,7 +204,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 ))
-(d:\CTEX\MiKTeX\tex\latex\multirow\multirow.sty
+(D:\CTEX\MiKTeX\tex\latex\multirow\multirow.sty
 \bigstrutjot=\dimen116
 )
 \c@theorem=\count108
@@ -214,7 +214,7 @@ G,.JBIG2,.JB2,.eps]
 \c@property=\count112
 \c@example=\count113
 
-(E:\我的文件\大数据挖掘\论文\Weight-CADO\Weight-CADO.aux
+(G:\7、大数据挖掘\论文\Weight-CADO\Weight-CADO.aux
 
 LaTeX Warning: Label `equ21' multiply defined.
 
@@ -231,7 +231,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
- (d:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
+ (D:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count114
 \scratchdimen=\dimen117
@@ -246,19 +246,19 @@ LaTeX Font Info:    ... okay on input line 24.
 \everyMPtoPDFconversion=\toks23
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 51.
- (d:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
+ (D:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 51.
 
-(d:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
+(D:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [1
 
 
-{d:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}]
+{D:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 62.
- (d:\CTEX\MiKTeX\tex\latex\base\omscmr.fd
+ (D:\CTEX\MiKTeX\tex\latex\base\omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
@@ -269,14 +269,21 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [4] [5] [6] [7] [8]
-Overfull \hbox (37.15135pt too wide) in paragraph at lines 221--223
+Overfull \hbox (49.29497pt too wide) in paragraph at lines 223--225
 \OT1/cmr/m/n/10 For ex-am-ple, in Ta-ble 1[], we have $\OML/cmm/m/it/10 []\OT1
 /cmr/m/n/10 (\OML/cmm/m/it/10 Stewart; DeNiro\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/
 10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 DeNiro; DeNiro\OT1/cmr/m/n/10 ) =$
  []
 
-[9] [10]
-Overfull \hbox (1.97406pt too wide) detected at line 259
+[9]
+Overfull \hbox (14.78305pt too wide) in paragraph at lines 232--234
+\OT1/cmr/m/n/10 For ex-am-ple, $\OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m
+/it/10 DeNiro; DeNiro\OT1/cmr/m/n/10 ) = []$, $\OML/cmm/m/it/10 []\OT1/cmr/m/n
+/10 (\OML/cmm/m/it/10 DeNiro; Stewart\OT1/cmr/m/n/10 ) =$
+ []
+
+[10]
+Overfull \hbox (1.97406pt too wide) detected at line 262
 \OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m/n/1
 0 f\OML/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10
  []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/1
@@ -285,7 +292,7 @@ Overfull \hbox (1.97406pt too wide) detected at line 259
  []
 
 
-Overfull \hbox (34.66246pt too wide) in paragraph at lines 262--264
+Overfull \hbox (34.66246pt too wide) in paragraph at lines 265--267
 $\OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m/n/
 10 f\OML/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/1
 0  \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[
@@ -295,7 +302,7 @@ t/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 )$,
  []
 
 [11]
-Overfull \hbox (93.12604pt too wide) detected at line 285
+Overfull \hbox (93.12604pt too wide) detected at line 288
 [] \OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m/
 n/10 f\OML/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 ) + [] \OML/cmm/m
 /it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m/n/10 f\OML/cm
@@ -305,7 +312,7 @@ L/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :
  []
 
 
-Overfull \hbox (23.32184pt too wide) detected at line 296
+Overfull \hbox (23.32184pt too wide) detected at line 299
 []
  []
 
@@ -313,37 +320,36 @@ Overfull \hbox (23.32184pt too wide) detected at line 296
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[17] [18] [19] [20]
-(E:\我的文件\大数据挖掘\论文\Weight-CADO\Weight-CADO.aux)
+[17] [18] [19] [20] (G:\7、大数据挖掘\论文\Weight-CADO\Weight-CADO.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  3023 strings out of 495354
- 39055 string characters out of 3183859
+ 39002 string characters out of 3183859
  103998 words of memory out of 3000000
  6119 multiletter control sequences out of 15000+200000
  14079 words of font info for 53 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,12n,30p,1332b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
-<d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/CTEX/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmbx9.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmex10.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/
-CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><d:/CTEX/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmmi7.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr10.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/CTEX/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmr5.pfb><d:/CTEX/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr7.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:
-/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><d:/CTEX/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmsy5.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/CTEX/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/CTEX/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmti10.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti7.pf
-b><d:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><d:/CTEX/MiKTeX/font
-s/type1/public/amsfonts/cm/cmti9.pfb><d:/CTEX/MiKTeX/fonts/type1/public/amsfont
+ 42i,12n,30p,1323b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/CTEX/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmbx9.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmex10.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/
+CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/CTEX/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmmi7.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/CTEX/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/CTEX/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr7.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:
+/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/CTEX/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmsy5.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/CTEX/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/CTEX/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmti10.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti7.pf
+b><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><D:/CTEX/MiKTeX/font
+s/type1/public/amsfonts/cm/cmti9.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmtt8.pfb>
-Output written on Weight-CADO.pdf (20 pages, 320817 bytes).
+Output written on Weight-CADO.pdf (20 pages, 321394 bytes).
 PDF statistics:
  151 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

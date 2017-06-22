@@ -57,11 +57,11 @@ In the study of the similarity between two numerical variables, the distance mea
 
 The challenge is that these methods are too rough to accurately represent the similarity between categorical attribute values. In addition, none of them provides a comprehensive similarity between categorical attributes by combining relevant aspects. Even if the CADO algorithm considers partial coupling of attributes, the difference in the degree of coupling between attributes is not taken into account.
 
-In this paper, we explicitly discuss the distance measure for categorical data objects. This distance matrix takes into account the characteristics of the categorical values. The core idea is to measure the distance with the frequency probability of each attribute value in the whole data set. The key contribution are as follows.
+In this paper, we explicitly discuss the distance measure for categorical data objects. This distance metric takes into account the characteristics of the categorical values. The core idea is to measure the distance with the frequency probability of each attribute value in the whole data set. The key contribution are as follows.
 \begin{itemize}
-  \item A intra-attribute weighting scheme for categorical attributes is presented, which assigns larger weight to the attributes with mismatching value pairs as they can provide more important information. And it can adjust the contribution of distance along each attribute to the whole object distance. Moreover, the weight between two pairs of attribute values is related to the frequency of occurrence of two attribute values.
+  \item A intra-attribute weighting scheme for categorical attributes is presented, which assigns different weight according to the difference in the distribution of the values of each attribute. The intra-attribute weighting not only takes into account the weight between different attributes, but also taking into account the occurrence frequency of the value pairs within an attribute.
 
-  \item A weighted coupled attribute distance metric between objects is proposed, which based on CADO algorithm \cite{WangC2015CADO}. By using the dynamic attribute weight and the relationship between categorical attributes \cite{JiaH2016NewMetric} on the basis of the CADO algorithm, the characteristics of the more comprehensive response between objects are adopted.
+  \item A weighted coupled attribute distance metric between objects (W-CADO) is proposed, which based on CADO algorithm \cite{WangC2015CADO}. By using the intra-attribute weighting and the inter-attribute weighting \cite{JiaH2016NewMetric} on the basis of the CADO algorithm, the characteristics of the more comprehensive response between objects are adopted.
 \end{itemize}
 
 This paper is organized as follows. In Section 2, we specify preliminary definitions. The intra-attribute weight and inter-attribute weight are given in Section 3. Section 4 proposes the weighted intra-coupled distance, the weighted inter-coupled distance, and their aggregation. We describe the W-CADO algorithm in Section 5. The effectiveness of W-CADO is empirically studied in Section 6. Finally, we conclude this paper in Section 7.
@@ -74,7 +74,7 @@ Definition 1 ($p_{A_r}(x_{ir})$): The probability of attribute $r$ in presenting
 p_{A_r}(x_{ir}) = \frac{\sigma_{A_r = x_{ir}}(X)}{\sigma_{A_r \neq NULL}(X)}
 \label{equ1}
 \end{equation}
-Here, the operation $\sigma_{A_r = x_{ir}}(X)$ counts the number of objects in the data set $X$ that have the value $x_{ir}$ for attribute $A_{r}$ and the symbol NULL refers to the empty. $x_{ir}$ is the categorical value of attribute $A_{r}$ from data objects $x_{i}$.
+Here, the operation $\sigma_{A_r = x_{ir}}(X)$ counts the number of objects in the data set $X$ that have the value $x_{ir}$ for attribute $A_{r}$ and the symbol NULL refers to the empty.
 
 Definition 2 ($p_{A_r}^-(x_{ir})$): The estimated probability of attribute $r$ in presenting a value equal to x$_{ir}$ in the object set $X$ \cite{TiagoC2015SimilarityMeasure}.
 \begin{equation}
@@ -173,6 +173,8 @@ Subsequently, the intra-attribute weight is between value $x_{ir}$ and $x_{jr}$ 
 \end{equation}
 Alternatively, we could consider other combination forms of $\eta$ and $\theta$ according to the data structure, such as $\omega(A_r,x_{ir},x_{jr})= \alpha \cdot \eta(A_r) + \gamma \cdot \theta(x_{ir},x_{jr})$, where $0 \leq \alpha,\gamma \leq 1 (\alpha+\gamma = 1)$ are the corresponding weights. Thus, $\eta$ and $\theta$ can be controlled flexibly to display in which cases the former is more significant than the latter, and vice versa.
 
+The intra-attribute weighting can adjust the contribution of distance along each attribute to the whole object distance. Moreover, the weight reflects the distance between different value pairs within an attribute on the basis of the occurrence frequency.
+
 \subsection{Inter-attribute Weighting}
 Most existing distance or similarity metrics for categorical data treat each attribute individually. However, in real data, we often have some attributes that are highly dependent on each other. So, the computation of similarity or distance for categorical attribute should be considered based on frequently co-occurring items \cite{VGanti1999CACTUS}. That is, the similarity between two values from one attribute should be calculated by considering the other attributes that are highly correlated with this one. In order to utilize the useful relationship information accompanying with each pair of attributes well, the interdependence redundancy measure \cite{WaiHoAu2005Grouping} has been introduced to evaluate the dependence degree between different attributes. Subsequently, the distance between two values from one attribute is not only measured by their own frequency probabilities but also by the values of other attributes that are highly relevant to this one. In especial, given the data set $X$, the dependence degree between each pair of attributes $A_r$ and $A_l$ $\mathbf (r,l \in \{1,2,\cdots,d\})$ can be quantified based on the mutual information \cite{MacKay2003InformationTheory} between them, which is defined as
 \begin{equation}
@@ -219,7 +221,7 @@ According to CADO algorithm \cite{WangC2015CADO}, the intra-coupled attribute si
 \delta_{A_r}^{IaASV}(x_{ir},x_{jr}) = \frac{\sigma_{A_r = x_{ir}}(X) \cdot \sigma_{A_r = x_{jr}}(X)}{\sigma_{A_r = x_{ir}}(X) + \sigma_{A_r = x_{jr}}(X) + \sigma_{A_r = x_{ir}}(X) \cdot \sigma_{A_r = x_{jr}}(X)}
 \label{equ17}
 \end{equation}
-For example, in Table \ref{tab:movie data}, we have $\delta_{Actor}^{Ia}(Stewart,De Niro) = \delta_{Actor}^{Ia}(De Niro,De Niro) = 0.5$ since both De Niro and Stewart appear twice.
+For example, in Table \ref{tab:movie data}, we have $\delta_{Actor}^{IaASV}(Stewart,De Niro) = \delta_{Actor}^{IaASV}(De Niro,De Niro) = 0.5$ since both De Niro and Stewart appear twice.
 
 However, the measure of intra-coupled similarity in CADO algorithm does not show the similarity in the same class and the dissimilarity between different classes. For instance, the similarity of the Godfather II's De Niro and Good Fellas's De Niro should be greater than the Good Fellas's De Niro and Harvey's Stewart because Godfather's Actor and Good Fellas's Actor belong to the same class L1.
 
@@ -228,6 +230,7 @@ Here, Wang consider $h_1(t) = 1/t - 1$ to reflect the complementarity between si
 \label{equ18}
 \delta_{A_r}^{W-IaADV}(x_{ir},x_{jr}) = \omega(A_r,x_{ir},x_{jr}) * (\frac{1}{IaASV} - 1)
 \end{equation}
+For example, $\delta_{Actor}^{W-IaADV}(De Niro,De Niro) = \frac{1}{45}$, $\delta_{Actor}^{W-IaADV}(De Niro,Stewart) = \frac{4}{45}$. They correspond to the fact that the distance between Good Fellas's De Niro and Vertigo's Stewart is larger than that between Godfather II's De Niro and Good Fellas's De Niro.
 
 \subsection{The Weighted Inter-Coupled Interaction}
 According to CADO algorithm, the inter-coupled attribute similarity for values (IeASV) between attribute value $x_{ir}$ and $x_{jr}$ of attribute $A_r$ is
