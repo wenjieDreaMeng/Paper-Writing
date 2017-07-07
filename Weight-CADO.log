@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.5.27)  22 JUN 2017 21:53
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.5.27)  7 JUL 2017 21:19
 entering extended mode
 **G:/7、大数据挖掘/论文/Weight-CADO/Weight-CADO.tex
 (G:/7、大数据挖掘/论文/Weight-CADO/Weight-CADO.tex
@@ -257,42 +257,39 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 
 {D:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 62.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 58.
  (D:\CTEX\MiKTeX\tex\latex\base\omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 62.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 58.
 
-[2] [3]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[4] [5] [6] [7] [8]
-Overfull \hbox (49.29497pt too wide) in paragraph at lines 223--225
+[2] [3] [4] [5] [6] [7] [8] [9]
+Overfull \hbox (49.29497pt too wide) in paragraph at lines 235--237
 \OT1/cmr/m/n/10 For ex-am-ple, in Ta-ble 1[], we have $\OML/cmm/m/it/10 []\OT1
 /cmr/m/n/10 (\OML/cmm/m/it/10 Stewart; DeNiro\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/
 10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 DeNiro; DeNiro\OT1/cmr/m/n/10 ) =$
  []
 
-[9]
-Overfull \hbox (14.78305pt too wide) in paragraph at lines 232--234
+
+Overfull \hbox (14.78305pt too wide) in paragraph at lines 244--246
 \OT1/cmr/m/n/10 For ex-am-ple, $\OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m
 /it/10 DeNiro; DeNiro\OT1/cmr/m/n/10 ) = []$, $\OML/cmm/m/it/10 []\OT1/cmr/m/n
 /10 (\OML/cmm/m/it/10 DeNiro; Stewart\OT1/cmr/m/n/10 ) =$
  []
 
 [10]
-Overfull \hbox (1.97406pt too wide) detected at line 262
+Overfull \hbox (4.75185pt too wide) detected at line 274
 \OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m/n/1
 0 f\OML/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10
  []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/1
 0  \OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m
-/n/10 f\OML/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 )[]
+/n/10 f\OML/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/1
+0 :[]
  []
 
-
-Overfull \hbox (34.66246pt too wide) in paragraph at lines 265--267
+[11]
+Overfull \hbox (34.66246pt too wide) in paragraph at lines 277--279
 $\OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m/n/
 10 f\OML/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/1
 0  \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[
@@ -301,8 +298,8 @@ $\OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m/n/
 t/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 )$,
  []
 
-[11]
-Overfull \hbox (93.12604pt too wide) detected at line 288
+[12]
+Overfull \hbox (93.12604pt too wide) detected at line 300
 [] \OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m/
 n/10 f\OML/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 ) + [] \OML/cmm/m
 /it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m/n/10 f\OML/cm
@@ -312,11 +309,18 @@ L/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :
  []
 
 
-Overfull \hbox (23.32184pt too wide) detected at line 299
+Overfull \hbox (23.32184pt too wide) detected at line 311
 []
  []
 
-[12] [13] [14] [15] [16]
+[13] [14]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[15] [16]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -326,13 +330,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3023 strings out of 495354
- 39002 string characters out of 3183859
- 103998 words of memory out of 3000000
- 6119 multiletter control sequences out of 15000+200000
+ 3018 strings out of 495354
+ 38991 string characters out of 3183859
+ 102976 words of memory out of 3000000
+ 6114 multiletter control sequences out of 15000+200000
  14079 words of font info for 53 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,12n,30p,1323b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,12n,30p,1331b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
 <D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/CTEX/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmbx9.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmex10.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/
@@ -349,7 +353,7 @@ TeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/CTEX/MiKTeX/fonts/type1/public
 b><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><D:/CTEX/MiKTeX/font
 s/type1/public/amsfonts/cm/cmti9.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmtt8.pfb>
-Output written on Weight-CADO.pdf (20 pages, 321394 bytes).
+Output written on Weight-CADO.pdf (20 pages, 322541 bytes).
 PDF statistics:
  151 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
