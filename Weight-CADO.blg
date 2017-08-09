@@ -1,15 +1,6 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Weight-CADO.aux
-The style file: elsarticle-num.bst
-I found no \bibdata command---while reading file Weight-CADO.aux
-Warning--I didn't find a database entry for "BoriahS2008Comparative"
-Warning--I didn't find a database entry for "Ahmad2007ALGO"
-Warning--I didn't find a database entry for "WangC2015CADO"
-Warning--I didn't find a database entry for "JiaH2016NewMetric"
-Warning--I didn't find a database entry for "TiagoC2015SimilarityMeasure"
-Warning--I didn't find a database entry for "VGanti1999CACTUS"
-Warning--I didn't find a database entry for "WaiHoAu2005Grouping"
-Warning--I didn't find a database entry for "MacKay2003InformationTheory"
-Warning--I didn't find a database entry for "LiangJY2012means"
-Warning--I didn't find a database entry for "strehl2003cluster"
-Warning--I didn't find a database entry for "UVon2007Tutorial"
-(There was 1 error message)
+The style file: plain.bst
+Database file #1: references.bib
+Warning--empty journal in Boriah2008Similarity
+Warning--empty booktitle in Ganti1999CACTUS
+(There were 2 warnings)

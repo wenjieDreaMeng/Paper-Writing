@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.5.27)  7 JUL 2017 21:19
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.8.6)  6 AUG 2017 18:43
 entering extended mode
 **G:/7、大数据挖掘/论文/Weight-CADO/Weight-CADO.tex
 (G:/7、大数据挖掘/论文/Weight-CADO/Weight-CADO.tex
@@ -214,24 +214,21 @@ G,.JBIG2,.JB2,.eps]
 \c@property=\count112
 \c@example=\count113
 
-(G:\7、大数据挖掘\论文\Weight-CADO\Weight-CADO.aux
+(G:\7、大数据挖掘\论文\Weight-CADO\Weight-CADO.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 
-LaTeX Warning: Label `equ21' multiply defined.
-
-)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
- (D:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
+(D:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count114
 \scratchdimen=\dimen117
@@ -245,11 +242,11 @@ LaTeX Font Info:    ... okay on input line 24.
 \makeMPintoPDFobject=\count119
 \everyMPtoPDFconversion=\toks23
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 51.
+LaTeX Font Info:    Try loading font information for U+msa on input line 47.
  (D:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 51.
+LaTeX Font Info:    Try loading font information for U+msb on input line 47.
 
 (D:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -257,29 +254,35 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 
 {D:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 58.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 54.
  (D:\CTEX\MiKTeX\tex\latex\base\omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 58.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 54.
 
-[2] [3] [4] [5] [6] [7] [8] [9]
-Overfull \hbox (49.29497pt too wide) in paragraph at lines 235--237
+[2] [3] [4] [5]
+Overfull \hbox (5.94505pt too wide) in paragraph at lines 148--149
+\OT1/cmr/m/n/10 and the cou-pling be-tween at-tributes, we pro-pose a new weigh
+t-computing method.
+ []
+
+[6] [7] [8] [9]
+Overfull \hbox (49.29497pt too wide) in paragraph at lines 232--234
 \OT1/cmr/m/n/10 For ex-am-ple, in Ta-ble 1[], we have $\OML/cmm/m/it/10 []\OT1
 /cmr/m/n/10 (\OML/cmm/m/it/10 Stewart; DeNiro\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/
 10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 DeNiro; DeNiro\OT1/cmr/m/n/10 ) =$
  []
 
-
-Overfull \hbox (14.78305pt too wide) in paragraph at lines 244--246
+[10]
+Overfull \hbox (14.78305pt too wide) in paragraph at lines 241--243
 \OT1/cmr/m/n/10 For ex-am-ple, $\OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m
 /it/10 DeNiro; DeNiro\OT1/cmr/m/n/10 ) = []$, $\OML/cmm/m/it/10 []\OT1/cmr/m/n
 /10 (\OML/cmm/m/it/10 DeNiro; Stewart\OT1/cmr/m/n/10 ) =$
  []
 
-[10]
-Overfull \hbox (4.75185pt too wide) detected at line 274
+[11]
+Overfull \hbox (4.75185pt too wide) detected at line 271
 \OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m/n/1
 0 f\OML/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10
  []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/1
@@ -288,8 +291,8 @@ Overfull \hbox (4.75185pt too wide) detected at line 274
 0 :[]
  []
 
-[11]
-Overfull \hbox (34.66246pt too wide) in paragraph at lines 277--279
+
+Overfull \hbox (34.66246pt too wide) in paragraph at lines 274--276
 $\OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m/n/
 10 f\OML/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/1
 0  \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[
@@ -299,7 +302,7 @@ t/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 )$,
  []
 
 [12]
-Overfull \hbox (93.12604pt too wide) detected at line 300
+Overfull \hbox (93.12604pt too wide) detected at line 297
 [] \OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m/
 n/10 f\OML/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 ) + [] \OML/cmm/m
 /it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; \OMS/cmsy/m/n/10 f\OML/cm
@@ -309,53 +312,60 @@ L/cmm/m/it/10 V[]\OMS/cmsy/m/n/10 g[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :
  []
 
 
-Overfull \hbox (23.32184pt too wide) detected at line 311
+Overfull \hbox (23.32184pt too wide) detected at line 308
 []
  []
 
-[13] [14]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[15] [16]
+[13] [14] [15] [16]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[17] [18] [19] [20] (G:\7、大数据挖掘\论文\Weight-CADO\Weight-CADO.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
- ) 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[17] [18] (G:\7、大数据挖掘\论文\Weight-CADO\Weight-CADO.bbl [19]
+Missing character: There is no � in font cmr10!
+Missing character: There is no � in font cmr10!
+Missing character: There is no � in font cmr10!
+Missing character: There is no � in font cmr10!
+
+[20]) [21] (G:\7、大数据挖掘\论文\Weight-CADO\Weight-CADO.aux) ) 
 Here is how much of TeX's memory you used:
- 3018 strings out of 495354
- 38991 string characters out of 3183859
- 102976 words of memory out of 3000000
- 6114 multiletter control sequences out of 15000+200000
+ 3022 strings out of 495354
+ 39109 string characters out of 3183860
+ 101935 words of memory out of 3000000
+ 6115 multiletter control sequences out of 15000+200000
  14079 words of font info for 53 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,12n,30p,1331b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
-<D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/CTEX/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmbx9.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmex10.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/
-CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/CTEX/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmmi7.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr10.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/CTEX/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/CTEX/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr7.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:
-/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/CTEX/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmsy5.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/CTEX/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/CTEX/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmti10.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti7.pf
-b><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><D:/CTEX/MiKTeX/font
-s/type1/public/amsfonts/cm/cmti9.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmtt8.pfb>
-Output written on Weight-CADO.pdf (20 pages, 322541 bytes).
+ 42i,12n,30p,1323b,414s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/CTE
+X/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/CTEX/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmbx9.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cme
+x10.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/CTEX/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/CTEX/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmmi7.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb>
+<D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/CTEX/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmr12.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr5.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/CTEX/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/CTEX/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmr9.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:/CTEX/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmsy6.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmsy7.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:/CTE
+X/MiKTeX/fonts/type1/public/amsfonts/cm/cmti7.pfb><D:/CTEX/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmti8.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti
+9.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><D:/CTEX/MiKTeX/
+fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/CTEX/MiKTeX/fonts/type1/publ
+ic/amsfonts/symbols/msbm7.pfb>
+Output written on Weight-CADO.pdf (21 pages, 341798 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
+ 166 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

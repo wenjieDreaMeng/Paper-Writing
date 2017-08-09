@@ -1,0 +1,112 @@
+@article{Boriah2008Similarity,
+  title={Similarity Measures for Categorical Data: A Comparative Evaluation},
+  author={Boriah, Shyam and Chandola, Varun and Kumar, Vipin},
+  pages={243-254},
+  year={2008},
+}
+
+@book{Ahmad2007Method,
+  title={A method to compute distance between two categorical values of same attribute in unsupervised learning for categorical data set},
+  author={Ahmad, Amir and Dey, Lipika},
+  publisher={Elsevier Science Inc.},
+  pages={110-118},
+  year={2007},
+}
+
+@article{Wang2015Coupled,
+  title={Coupled Attribute Similarity Learning on Categorical Data},
+  author={Wang, Can and Dong, Xiangjun and Zhou, Fei and Cao, Longbing and Chi, Chi Hung},
+  journal={IEEE Transactions on Neural Networks and Learning Systems},
+  volume={26},
+  number={4},
+  pages={781},
+  year={2015},
+}
+
+@inproceedings{Jia2014A,
+  title={A new distance metric for unsupervised learning of categorical data},
+  author={Jia, Hong and Cheung, Yiu Ming},
+  booktitle={International Joint Conference on Neural Networks},
+  pages={1893-1899},
+  year={2014},
+}
+
+@article{Santos2015Categorical,
+  title={Categorical data clustering: What similarity measure to recommend?},
+  author={Santos, Tiago R. L. Dos and Z¨¢rate, Luis E.},
+  journal={Expert Systems with Applications},
+  volume={42},
+  number={3},
+  pages={1247-1260},
+  year={2015},
+}
+
+@inproceedings{Ganti1999CACTUS,
+  title={CACTUS-clustering categorical data using summaries},
+  author={Ganti, Venkatesh and Gehrke, Johannes and Ramakrishnan, Raghu},
+  pages={73-83},
+  year={1999},
+}
+
+@article{Au2005Attribute,
+  title={Attribute clustering for grouping, selection, and classification of gene expression data.},
+  author={Au, W. H. and Chan, K. C. and Wong, A. K. and Wang, Y.},
+  journal={IEEE/ACM Transactions on Computational Biology and Bioinformatics},
+  volume={2},
+  number={2},
+  pages={83-101},
+  year={2005},
+}
+
+@article{Liang2012The,
+  title={The   -Means-Type Algorithms Versus Imbalanced Data Distributions},
+  author={Liang, Jiye and Bai, Liang and Dang, Chuangyin and Cao, Fuyuan},
+  journal={IEEE Transactions on Fuzzy Systems},
+  volume={20},
+  number={4},
+  pages={728-745},
+  year={2012},
+}
+
+@book{Strehl2003Cluster,
+  title={Cluster ensembles --- a knowledge reuse framework for combining multiple partitions},
+  author={Strehl, Alexander and Ghosh, Joydeep},
+  publisher={JMLR.org},
+  pages={583-617},
+  year={2003},
+}
+
+@article{Luxburg2007A,
+  title={A tutorial on spectral clustering},
+  author={Luxburg, Ulrike Von},
+  journal={Statistics and Computing},
+  volume={17},
+  number={4},
+  pages={395-416},
+  year={2007},
+}
+
+@book{MacKay2003Information,
+  title={Information theory, inference, and learning algorithms},
+  author={MacKay and Davidj., C},
+  publisher={Cambridge University Press},
+  pages={348-349},
+  year={2003},
+}
+
+@inproceedings{Labiod2011A,
+  title={A Spectral Based Clustering Algorithm for Categorical Data with Maximum Modularity},
+  author={Labiod, Lazhar and Bennani, Youn¨¨s},
+  booktitle={Esann 2011,  European Symposium on Artificial Neural Networks, Bruges, Belgium, April 27-29, 2011, Proceedings},
+  year={2011},
+}
+
+@article{Ahmad2007KMean,
+  title={A k -mean clustering algorithm for mixed numeric and categorical data},
+  author={Ahmad, Amir and Dey, Lipika},
+  journal={Data & Knowledge Engineering},
+  volume={63},
+  number={2},
+  pages={503-527},
+  year={2007},
+}
