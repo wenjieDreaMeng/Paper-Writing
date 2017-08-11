@@ -2,15 +2,14 @@
 
 \bibitem{Ahmad2007KMean}
 Amir Ahmad and Lipika Dey.
-\newblock A k -mean clustering algorithm for mixed numeric and categorical
-  data.
+\newblock A k-mean clustering algorithm for mixed numeric and categorical data.
 \newblock {\em Data and Knowledge Engineering}, 63(2):503--527, 2007.
 
 \bibitem{Ahmad2007Method}
 Amir Ahmad and Lipika Dey.
-\newblock {\em A method to compute distance between two categorical values of
-  same attribute in unsupervised learning for categorical data set}.
-\newblock Elsevier Science Inc., 2007.
+\newblock A method to compute distance between two categorical values of same
+  attribute in unsupervised learning for categorical data set.
+\newblock {\em Pattern Recognition Letters}, 28(1):110--118, 2007.
 
 \bibitem{Au2005Attribute}
 W.~H. Au, K.~C. Chan, A.~K. Wong, and Y.~Wang.
@@ -19,21 +18,29 @@ W.~H. Au, K.~C. Chan, A.~K. Wong, and Y.~Wang.
 \newblock {\em IEEE/ACM Transactions on Computational Biology and
   Bioinformatics}, 2(2):83--101, 2005.
 
+\bibitem{bache2014uci}
+K~Bache and M~Lichman.
+\newblock Uci machine learning repository [j/ol]. irvine, ca: School of
+  information and computer science, university of california.
+\newblock 2014.
+
 \bibitem{Boriah2008Similarity}
 Shyam Boriah, Varun Chandola, and Vipin Kumar.
 \newblock Similarity measures for categorical data: A comparative evaluation.
-\newblock pages 243--254, 2008.
+\newblock In {\em Proceedings of the 2008 SIAM International Conference on Data
+  Mining}, pages 243--254. SIAM, 2008.
 
 \bibitem{Ganti1999CACTUS}
 Venkatesh Ganti, Johannes Gehrke, and Raghu Ramakrishnan.
-\newblock Cactus-clustering categorical data using summaries.
-\newblock pages 73--83, 1999.
+\newblock Cactus¡ªclustering categorical data using summaries.
+\newblock In {\em Proceedings of the fifth ACM SIGKDD international conference
+  on Knowledge discovery and data mining}, pages 73--83. ACM, 1999.
 
 \bibitem{Jia2014A}
-Hong Jia and Yiu~Ming Cheung.
+Hong Jia, Yiu-ming Cheung, and Jiming Liu.
 \newblock A new distance metric for unsupervised learning of categorical data.
-\newblock In {\em International Joint Conference on Neural Networks}, pages
-  1893--1899, 2014.
+\newblock {\em IEEE transactions on neural networks and learning systems},
+  27(5):1065--1079, 2016.
 
 \bibitem{Labiod2011A}
 Lazhar Labiod and Youn¨¨s Bennani.
@@ -64,9 +71,9 @@ Tiago R. L.~Dos Santos and Luis~E. Z¨¢rate.
 
 \bibitem{strehl2003cluster}
 Alexander Strehl and Joydeep Ghosh.
-\newblock {\em Cluster ensembles --- a knowledge reuse framework for combining
-  multiple partitions}.
-\newblock JMLR.org, 2003.
+\newblock Cluster ensembles---a knowledge reuse framework for combining
+  multiple partitions.
+\newblock {\em Journal of machine learning research}, 3(Dec):583--617, 2002.
 
 \bibitem{Wang2015Coupled}
 Can Wang, Xiangjun Dong, Fei Zhou, Longbing Cao, and Chi~Hung Chi.
