@@ -20,7 +20,7 @@
 \begin{document}
 
 \begin{frontmatter}
-\title{A Weighted Distance Metric on Categorical Data}
+\title{A weighted distance metric for clustering categorical data}
 %\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
 
 %% Group authors per affiliation:
@@ -38,7 +38,7 @@ Education, School of Computer and Information Technology, Shanxi
 University, Taiyuan 030006, China}
 
 \begin{abstract}
-    Measuring the distance or dissimilarity between two categorical data objects that playing an important role in many data mining and machine learning tasks is the basis of many measure algorithm. Recently, the assumption of categorical data similarity analysis is mostly divided into three categories: attribute irrelevance, attribute values co-occurrence and attribute coupling. However, in real data sets, attributes are more or less associated with certain relationships. In this paper, we define a weighted dissimilarity measure on categorical objects. It involves the frequency-based weighted intra-coupled distance within an attribute and the weighted inter-coupled distance upon value co-occurrences between attributes. Then we prove the dissimilarity measure is a metric. The experimental results on categorical data have shown the good effect of the proposed distance measure , comparing to other measures.
+Measuring the distance or dissimilarity between two objects is a very difficult problem in clustering categorical data sets. The dissimilarity of categorical objects can be divided into three categories: attribute-irrelevance-based, attribute values co-occurrence-based and attribute coupling-based. We consider that each attribute has different importance for the contribution of dissimilarity between two objects. In this paper, we define a weighted dissimilarity measure between two categorical objects. It involves the frequency-based weighted intra-coupled distance within an attribute and the weighted inter-coupled distance upon value co-occurrences between attributes. Then we prove the dissimilarity measure is a metric and give an algorithm AW-CADO. The experimental results on categorical data have shown the good effect of the proposed distance measure , comparing to other measures on several UCI data sets.
 \end{abstract}
 \begin{keyword}
 Clustering, Coupled attribute distance, Weighting metric
@@ -47,19 +47,18 @@ Clustering, Coupled attribute distance, Weighting metric
 \end{frontmatter}
 
 \section{Introduction}
-The unsupervised learning being one of the machine learning task that aims to reveal the inherent nature and regularities of the the unlabeled training objects, provides the basis for further data analysis. The most widely used approaches in this learning task is clustering, which useful in pattern-analysis, grouping, decision-making, and machining-learning situations, such as data mining. Data clustering is a data analysis technique and has been considered as a primary data mining method for knowledge discovery \cite{Labiod2011A}. The basic problem involved in the process of data clustering is distance calculation, which is also called similarity calculation. As the distance between objects becomes larger, the similarity becomes smaller, and vice versa.
 
-In the studies of the similarity between two numerical variables, the definition of distance among objects has Euclidean, Minkowski and so on. This works fine when the defining attributes of a data set are purely numeric in nature. However, these distance measure fails to capture the similarity of data elements when attributes are categorical \cite{Ahmad2007KMean}. Clustering categorical data sets into meaningful groups is a challenging task in which a good distance measure, which can adequately capture data similarities, has to be used in conjunction with an efficient clustering algorithm \cite{Ahmad2007KMean}. The current measure approaches on categorical data are divided into three categories.
+The aim of clustering is to divide data objects into homogeneous groups so that objects in the same group are similar and objects in different groups are different \cite{Han:2011:DMC:1972541}. In clustering algorithms, how to define the dissimilarity between objects is a very difficult problem, because different dissimilarity measures often result in different clustering results. For numerical data, there are many measures to compute the dissimilarity between two objects, such as Euclidean, Minkowski and Mahalanobis distance. As categorical data lacks of inherent geometrical property, distance measures for computing numerical data can not be applied to categorical data sets. To compute the dissimilarity between two categorical data, many measures have been defined. These measures can be divided into three categories:
 \begin{itemize}
-  \item Attribute irrelevance: we assume that attributes are mutual independent in these measures, including simple matching similarity (SMS), which uses 0s and 1s to distinguish the similarity between distinct and identical categorical values, the occurrence frequency (OF) \cite{Boriah2008Similarity} and the information-theoretical similarity (Lin) \cite{Boriah2008Similarity}, to discuss the similarity between categorical values.
-  \item Attribute values co-occurrence: These measures compute dissimilarity between two categorical values of same attribute depending upon co-occurrence probabilities of these two values with respect to every other attributes of data set, such as ALGO DISTANCE measure \cite{Ahmad2007Method} proposed by Ahmad.
-  \item Attribute coupling: These methods take into consideration both the frequency-based intra-attribute dissimilarity within an attribute and the inter-attribute dissimilarity between attributes, such as Wang proposed the coupled attribute dissimilarity for objects (CADO) measure \cite{Wang2015Coupled}.
+  \item Attribute irrelevance-based measures: It is assumed that different attributes are mutual independent in most clustering algorithms. For example, simple matching similarity (abbr. SMS) uses 0s and 1s to distinguish the similarity between distinct and identical categorical values. The occurrence frequency similarity (abbr. OF) \cite{Boriah2008Similarity} is assigned with value equal to 1 when a match occurs. In the case of a mismatch, a real value that is greater than zero is assigned to the similarity. The information-theoretical similarity (abbr. Lin) \cite{Boriah2008Similarity} gives higher weight to matches on frequent values, and lower weight to mismatches on infrequent values.
+  \item Attribute values co-occurrence-based measures: The dissimilarity measure between two categorical values of the same attribute depending upon co-occurrence probabilities of these two values with respect to every other attributes of data set. The representative measure is ALGO measure \cite{Ahmad2007Method} proposed by Ahmad.
+  \item Attribute coupling-based measures: They take into consideration both the frequency-based intra-attribute dissimilarity within an attribute and the inter-attribute dissimilarity between attributes. For example, Wang proposed the coupled attribute dissimilarity for objects (CADO) measure \cite{Wang2015Coupled}.
  \end{itemize}
 
-Below, we take a real example to illustrate the challenge of analyzing the categorical data similarity using above measures. A real data application example is described in Table \ref{tab:movie data}.
+Below, we take a real example to compute the dissimilarity between two categorical objects to reveal the shortcomings of the above measures. A real data application example is described in Table \ref{tab:movie data}.
 \begin{table}[!htp]\tabcolsep=0.065in
 \centering
-\caption{Instances of The Movie Database}
+\caption{Objects of The Movie Database}
 \small
 \label{tab:movie data}
 \begin{tabular}{cccccc}
@@ -80,34 +79,36 @@ Bishop's Wife & Grant & Comedy & Koster & L2 \\
 \hline
 \end{tabular}
 \end{table}
-As shown in Table \ref{tab:movie data}, six movie objects with three categorical attributes are divided into two classes. The SMS measure between actors Stewart and Grant is 0, but Stewart and Grant are very similar. Another observation by SMS is that the similarity between Stewart and Grant is equal to that between De Niro and Stewart. In the same way, the ALGO DISTANCE measure between actors Stewart and Grant is 0.5, which is equivalent to the distance between De Niro and Stewart. However, the similarity of the former pair should be greater because both actors belong of the same class L2.
+
+
+As shown in Table \ref{tab:movie data}, six movie objects with three categorical attributes are divided into two classes. The value of SMS measure between movies Vertigo and Bishop's Wife is 0, but Harvey and Bishop's Wife are very similar because they belong to the same class L2. Another observation by SMS is that the similarity between movies Vertigo and Bishop's Wife is equal to that between movies Vertigo and Good Fellas. However, the similarity of the former pair should be greater because Vertigo and Bishop's Wife belong to the same class L2. Similarly, the ALGO DISTANCE measure between movies Vertigo and Bishop's Wife is 0, which is equivalent to the distance between movies Vertigo and Good Fellas. This does not agree with the fact of Vertigo and Bishop's Wife belong to the same class L2, Vertigo and Good Fellas belong to different classes.
 
 The above examples show that it is highly complex to analyse the similarity between categorical variables. The SMS and the ALGO DISTANCE fail to capture a global picture of the real relationship for categorical data.
 
-Wang has put forward an effective algorithm \cite{Wang2015Coupled} (CADO) to improve the shortcomings of the above measures. Wang makes a point about the data-driven intra-coupled similarity and inter-coupled similarity, as well as their global aggregation in unsupervised learning on categorical data.
+Wang put forward an effective algorithm (CADO) to improve the shortcomings of the above measures. Wang made a point about the data-driven intra-coupled similarity and inter-coupled similarity, as well as their global aggregation in unsupervised learning on categorical data \cite{Wang2015Coupled}.
 
 However, the measure of intra-coupled dissimilarity in CADO does not greatly show the high intra-class similarity and the low inter-class similarity. Moreover, the compute method of weight parameter for attributes is not given in the CADO algorithm. For example, the CADO measure similarity between Godfather II's De Niro and Good Fellas's De Niro is 0.5 and so is the similarity between Good Fellas's De Niro and Vertigo's Stewart. However, since both actor of the former pair belong to the same class L1, so the similarity should be greater.
 
-The shortcomings of the above measures are summarized in three aspects.
+The shortcomings of the above measures are obvious and we summarize them as three aspects.
 \begin{itemize}
   \item The difference of coupling between attributes is not taken into account. Even if the CADO measure considers the inter-attribute coupling, all of the weights for attributes are assumed to be the same.
   \item All of them don't consider the differences of weight for an attribute when the dissimilarity or similarity between objects is computed. In real data sets, different attributes have their own features, so the contribution of the dissimilarity or similarity among attributes is different.
   \item For some measures, the intra-attribute dissimilarity between value pairs is independent of the probability of occurrence. For example, SMS and ALGO DISTANCE assume that the value pairs are mutual independent within an attribute.
  \end{itemize}
 
-To sum up, these methods have certain challenges to accurately reflect the dissimilarity or similarity on categorical data.
+To sum up, these methods have certain challenges to accurately reflect the dissimilarity or similarity on categorical data. The distance metric proposed in this paper aims at improving the above shortcomings.
 
 In this paper, we explicitly define a measure on categorical data. The metric takes into account the characteristics of the categorical values, including the frequency probability within an attribute, the coupling inter-attribute and the feature of every attribute. The key contributions are as follows.
 \begin{itemize}
   \item An intra-attribute weighting scheme for categorical attributes is presented, which assigns different weight according to the different distribution of each attribute's values. The intra-attribute weighting not only takes into account the weight between different attributes, but also takes into consideration the occurrence frequency of the value pairs within an attribute.
 
-  \item A weighted coupled attribute distance metric between objects (W-CADO) is proposed, which is based on CADO algorithm \cite{Wang2015Coupled}. By using the intra-attribute weight and the inter-attribute weight \cite{Jia2014A} in the distance calculation, the comprehensive characteristics between objects are revealed.
+  \item A weighted coupled attribute distance metric between objects (W-CADO) is proposed, which is based on CADO \cite{Wang2015Coupled}. By using the intra-attribute weight and the inter-attribute weight \cite{Jia2014A} in the distance calculation, the comprehensive characteristics between objects are revealed.
 \end{itemize}
 
 This paper is organized as follows. In Section 2, we review some related definitions. The intra-attribute weight and inter-attribute weight are given in Section 3. Section 4 define the weighted intra-coupled distance, the weighted inter-coupled distance, and their integration. We describe the W-CADO algorithm in Section 5. The effectiveness of W-CADO is empirically studied in Section 6. Finally, we conclude this paper in Section 7.
 
 \section{Related Definitions}
-Given a data set ${X} = \{x_1,x_2,\dots,x_n\}$ with $n$ objects represented by $d$ categorical attributes $\{A_1,A_2,\dots,A_d\}$. Suppose that $V_r$ is a set of attribute values from the attribute $A_r (1 \leq r \leq d)$ with $m_r$ possible values and $x_{ir}$ is the value of the object $x_i$ in the attribute $A_r$ and $v_r$ represent the value of any object in the attribute $A_r$. Obviously, $x_{ir}, v_r \in V_r$.
+Given a data set ${X} = \{x_1,x_2,\dots,x_n\}$ with $n$ objects represented by $d$ categorical attributes $\{A_1,A_2,\dots,A_d\}$. Suppose that $V_r$ is a set of attribute values from the attribute $A_r (1 \leq r \leq d)$ with $m_r$ possible values and $x_{ir}$ is the value of the object $x_i$ in the attribute $A_r$. Obviously, $x_{ir}\in V_r$. $f = \cup_{r=1}^{d}f_r$,$f_r : X \to V_r(1 \leq r \leq d)$ is an information function that assigns a particular value of attribute $A_r$ to every object.
 
 \begin{definition} \cite{Santos2015Categorical} ($p_{A_r}(x_{ir})$): For any $x_i \in X$, the probability of $x_{ir}$ in the attribute $A_r$ is defined as
 \begin{equation}
@@ -128,20 +129,34 @@ Obviously, we can obtain $p_{Actor}(Stewart)$ = $\frac{1}{3}$,  $p_{Actor}^-(Ste
 
 \begin{definition} \cite{Wang2015Coupled} (ICP): Given a subset ${V'_r} \subseteq V_r$ having $m'_{r}$ possible values in the attribute $A_r$, and a value $v_l \in V_l$ in the attribute $A_l$, then the information conditional probability (ICP) of $V'_r$ with respect to $v_l$ is defined as
 \begin{equation}
-P_{{A_r}|{A_l}}(V'_r | v_l) = \frac{\sum_{v_r \in V'_r}^{m'_{r}}\sigma_{A_r = v_r \wedge A_l = v_l}(X)}{\sigma_{A_l = v_l}(X)}.
+P_{{A_r}|{A_l}}(V'_r | v_l) = \frac{\sum_{v_r \in V'_r}\sigma_{A_r = v_r \wedge A_l = v_l}(X)}{\sigma_{A_l = v_l}(X)}.
 \label{equ3}
 \end{equation}
 \end{definition}
 
 Intuitively, when given all the objects with the value $v_l$ in the attribute $A_l$, ICP is the percentage of common objects whose values of attribute $A_r$ fall in subset $V'_r$ and whose values of attribute $A_l$ are exactly $v_l$ as well. Hence, ICP quantifies the relative overlapping ratio of attribute values in terms of objects. for example, $P_{Actor|Genre}(\{Grant\} | Thriller) = 0.5$.
 
+\begin{definition} \cite{Wang2015Coupled} (SIF): Two set information functions are defined as
+\begin{equation}
+F_r : 2^{X} \to 2^{V_r},F_r(X')=\{f_r(x_i)|x_i \in X'\}
+\label{equ4}
+\end{equation}
+\begin{equation}
+G_r : 2^{V_r} \to 2^{X},G_r(V'_r)=\{x_i|f_r(x_i) \in V'_r\}
+\label{equ5}
+\end{equation}
+\end{definition}
+where $1 \leq r \leq d, 1 \leq i \leq n, X' \subseteq X$, and ${V'_r} \subseteq V_r$.
+
+These SIFs describe the relationships between objects and attribute values. Function $F_r(X')$ maps the object set $X'$ to the associated value set of attribute $A_r$. Function $G_r(V'_r)$ maps the value set $V'_r$ of attribute $A_r$ to the dependent object set. In Table \ref{tab:movie data}, $G_3(\{Hitchcock\}) = \{ Vertigo, N by NW \}$, $F_1(\{Vertigo,N by NW\}) = \{Stewart,Grant\}$.
+
 \begin{definition} \cite{Wang2015Coupled} The inter-coupled relative similarity based on intersection set between values $x_{ir}$ and $x_{jr}$ of attribute $A_r$ based on another attribute $A_l$ is defined as
 \begin{equation}
-\lambda_{A_r|A_l}(x_{ir},x_{jr},V_l) = \sum_{v_l \in \varkappa}^{}min\{P_{A_l|A_r}(\{v_l\}|x_{ir}),P_{A_l|A_r}(\{v_l\}|x_{jr})\},
+\lambda_{A_r|A_l}(x_{ir},x_{jr}) = \sum_{v_l \in \varkappa}^{}min\{P_{A_l|A_r}(\{v_l\}|x_{ir}),P_{A_l|A_r}(\{v_l\}|x_{jr})\},
 \label{equ4}
 \end{equation}
 \end{definition}
-where $v_l \in \varkappa$ denote $v_l$ $\in$ the intersection of the set of value in attribute $A_l$ corresponds with $x_{ir}$ in the attribute $A_r$ and the set of value in attribute $A_l$ corresponds with $x_{jr}$ in the attribute $A_r$. In \cite{Wang2015Coupled}, Wang consider four measures for the inter-coupled similarity to calculate the similarity between two categorical values by considering their relationships with other attributes in terms of power set, universal set, joint set, and intersection set. Wang reveals the equivalent accuracy and superior efficiency of the measure based on the intersection set by theoretical analysis.
+where $v_l \in \varkappa$ denote $v_l \in F_l(G_r(\{x_{ir}\})) \cap F_l(G_r(\{x_{jr}\}))$. In \cite{Wang2015Coupled}, Wang consider four measures for the inter-coupled similarity to calculate the similarity between two categorical values by considering their relationships with other attributes in terms of power set, universal set, joint set, and intersection set. Wang reveals the equivalent accuracy and superior efficiency of the measure based on the intersection set by theoretical analysis.
 
 \section{New weight-computing method for Categorical data}
 
@@ -175,12 +190,12 @@ Subsequently, following the proposed criterion, the weight of attribute $A_r$ sh
 \end{equation}
 In a word, $\eta(A_r,x_{ir},x_{jr})$ taking different values depend on whether $x_{ir}$ and $x_{jr}$ are equal, shows the special features of attribute $A_r$ among attributes.
 
-For the two values $x_{ir}$ and $x_{jr}$ of the attribute $A_r$, the distance weight between these two values is calculated by
+For two attribute values $x_{ir}$ and $x_{jr}$, the weight between them is calculated by
 \begin{equation}
 \theta(x_{ir},x_{jr}) = \frac{\sigma_{A_r = x_{ir}}(X)}{\sigma_{A_r \neq NULL}(X)} * \frac{\sigma_{A_r = x_{jr}}(X)}{\sigma_{A_r \neq NULL}(X)}.
 \label{equ8}
 \end{equation}
-Here,we take OF measure as a reference that assigns larger distance to mismatches on more frequent values. Alternatively, we could consider other forms of distance weight between two values of attribute $A_r$ according to the data structure, such as $\theta(x_{ir},x_{jr}) = \alpha \cdot \frac{\sigma_{A_r = x_{ir}}(X)}{\sigma_{A_r \neq NULL}(X)} + \gamma \cdot \frac{\sigma_{A_r = x_{jr}}(X)}{\sigma_{A_r \neq NULL}(X)}$ or $\theta(x_{ir},x_{jr}) = -\alpha \cdot \log{\frac{\sigma_{A_r = x_{ir}}(X)}{\sigma_{A_r \neq NULL}(X)}} - \gamma \cdot \log{\frac{\sigma_{A_r = x_{jr}}(X)}{\sigma_{A_r \neq NULL}(X)}}$, where $0 \leq \alpha,\gamma \leq 1 (\alpha+\gamma = 1)$ are the corresponding weights. $\theta(x_{ir},x_{jr})$ show the difference between two values of attribute $A_r$.
+Here,we take OF measure as a reference that mismatches on less frequent values are assigned lower similarity and mismatches on more frequent values are assigned higher similarity \cite{Boriah2008Similarity}. Within a certain range, the bigger $\theta(x_{ir},x_{jr})$ reflects the higher similarity of $x_{ir}$ and $x_{jr}$. Alternatively, we could consider other forms of weight between two values of attribute $A_r$ according to the data structure, such as $\theta(x_{ir},x_{jr}) = \alpha \cdot \frac{\sigma_{A_r = x_{ir}}(X)}{\sigma_{A_r \neq NULL}(X)} + \gamma \cdot \frac{\sigma_{A_r = x_{jr}}(X)}{\sigma_{A_r \neq NULL}(X)}$ or $\theta(x_{ir},x_{jr}) = -\alpha \cdot \log{\frac{\sigma_{A_r = x_{ir}}(X)}{\sigma_{A_r \neq NULL}(X)}} - \gamma \cdot \log{\frac{\sigma_{A_r = x_{jr}}(X)}{\sigma_{A_r \neq NULL}(X)}}$, where $0 \leq \alpha,\gamma \leq 1 (\alpha+\gamma = 1)$ are the corresponding weights. $\theta(x_{ir},x_{jr})$ show the weight between two values of attribute $A_r$ and represent the distance between these value pair indirectly.
 
 Subsequently, the intra-attribute weight is between value $x_{ir}$ and $x_{jr}$ for attribute $A_r$ is
 \begin{equation}
@@ -244,7 +259,7 @@ For example, $\delta_{Actor}^{W-IaADV}(De Niro,De Niro) = \frac{1}{45}$, $\delta
 \subsection{The Weighted Inter-Coupled Distance}
 According to CADO algorithm, the inter-coupled attribute similarity for values (IeASV) between attribute value $x_{ir}$ and $x_{jr}$ of attribute $A_r$ is
 \begin{equation}
-\delta_{A_r}^{IeASV}(x_{ir},x_{jr},\{V_l\}_{l \neq r}) = \sum_{l=1,l \neq r}^{d} \alpha_l \lambda_{A_r|A_l}(x_{ir},x_{jr},V_l).
+\delta_{A_r}^{IeASV}(x_{ir},x_{jr},\{V_l\}_{l \neq r}) = \sum_{l=1,l \neq r}^{d} \alpha_l \lambda_{A_r|A_l}(x_{ir},x_{jr}).
 \label{equ17}
 \end{equation}
 where $\alpha_l$ is the weight parameter for attribute $A_l$. In CADO algorithm, Wang assign $\alpha_l = \frac{1}{d-1}$. Here, Wang consider $h_2(t) = 1 - t$ to reflect the complementarity between similarity and dissimilarity measures.
@@ -335,12 +350,10 @@ The above proof verifies that the triangle inequality property holds on all attr
    \STATE return ${D(x_i,x_j)}$;
 \end{algorithmic}
 \end{algorithm}
-We then design the W-CADO algorithm, given in Algorithm 1, to compute the coupled object distance.
+We then design the AW-CADO algorithm, given in Algorithm 1, to compute the coupled object distance.
 
 \section{Experiments on real data sets}
-To validate the effectiveness of W-CADO, we mainly conduct some experiments on the five UCI data sets, Balloons data set, Soybean-small data set, Zoo data set, Congressional Voting Records data set and Breast Cancer data set \cite{Bache+Lichman:2014}. We firstly describe the basic information of the five data sets. Then five evaluation indexes are introduced. Finally, we show the comparison results of the W-CADO algorithm with the CADO algorithm.
-
-
+To validate the effectiveness of W-CADO, we mainly conduct some experiments on the five UCI data sets, Balloons data set, Soybean-small data set, Zoo data set, Congressional Voting Records data set and Breast Cancer data set \cite{bache2014uci}. We firstly describe the basic information of the five data sets. Then five evaluation indexes are introduced. Finally, we show the comparison results of the AW-CADO algorithm with the CADO algorithm.
 
 \subsection{Data sets}
 The information of the data sets we utilized is shown in Table \ref{tab:Information of data sets}.
@@ -352,7 +365,7 @@ The information of the data sets we utilized is shown in Table \ref{tab:Informat
 \label{tab:Information of data sets}
 \begin{tabular}{cccc}
 \hline
-\emph{Data Set}&\emph{Objects}&\emph{Attributes}&\emph{k} \\
+\emph{Data Sets}&\emph{Objects}&\emph{Attributes}&\emph{k} \\
 \hline
 Balloons Data Set                       & 20  & 4   & 2 \\
 Soybean-small Data Set                  & 47  & 35  & 4 \\
@@ -364,7 +377,7 @@ Breast Cancer Data Set                  & 699 & 10  & 2 \\
 \end{table}
 
 \subsection{Evaluation indexes}
-To evaluate the effectiveness of the W-CADO algorithm, we used the following five external criterions: (1) adjusted rand index (ARI) \cite{Liang2012The}, (2) normalized mutual information (NMI) \cite{strehl2003cluster}, (3) accuracy (AC), (4) precision (PR) and (5) recall (RE) to compare the obtained cluster of each object with that provided by data label.
+To evaluate the effectiveness of the AW-CADO algorithm, we used the following five external criterions: (1) adjusted rand index (ARI) \cite{Liang2012The}, (2) normalized mutual information (NMI) \cite{strehl2003cluster}, (3) accuracy (AC), (4) precision (PR) and (5) recall (RE) to compare the obtained cluster of each object with that provided by data label.
 
 As described in the Section 2, $X$ represents a data set, $C=\{C_1,C_2,\dots,C_k'\}$ be a clustering result of $X$, $P=\{P_1,P_2,\cdots,P_k\}$ be a real partition in $X$. The overlap between $C$ and $P$ can be summarized in a contingency table shown in Table \ref{tab-cont}, where $n_{ij}$ denotes the number of objects in common between $P_i$ and $C_j$, $n_{ij}=|P_i \bigcap C_j|$. $p_i$ and $c_j$ are the number of objects in $P_i$ and $C_j$, respectively.
 \begin{table}[!h]
@@ -406,11 +419,11 @@ $$RE=\frac{1}{k'}\sum_{i=1}^{k'}\frac{n_{ij_i^*}}{c_{i}},$$
 
 where  $n_{1j_1^*}+n_{2j_2^*}+\dots+n_{kj_k^*}=\max\limits_{j_1 j_2 \dots j_k \in S}\sum_{i=1}^{k}n_{ij_i}\ \ (j_1^* j_2^* \dots j_k^* \in S)$ and $S=\{j_1j_2 \dots j_k: j_1,j_2, \dots, j_k \in \{1,2,\dots,k\}$, $j_i\neq j_t$ for $i\neq t$ $\}$ is a set of all permutations of $1,2,\dots,k$. For $AC, PE, RE$, $k$ is equal to $k'$ in general case. In addition, we consider that the higher the values of $ARI$, $NMI$, $AC$, $PE$ and $RE$ are, the better the clustering solution is.
 
-\subsection{Comparisons between CADO Alogrithm and W-CADO Alogrithm}
+\subsection{Comparisons between CADO Alogrithm and AW-CADO Alogrithm}
 
 In our experiments, the value of the threshold parameter $\beta$ in the proposed metric is set equal to the average interdependence redundancy of all attribute pairs \cite{Jia2014A}. That is, $\beta$ is calculated by
 \begin{equation}
-\beta = \frac{1}{d^2}\sum_{r=1}^{d}\sum_{l=1}^{d}R(A_r;A_l).
+\beta = \frac{1}{d^2}\sum_{r=1}^{d}\sum_{l=1}^{d}\xi(r,l).
 \label{equ22}
 \end{equation}
 
@@ -513,12 +526,12 @@ The following tables report the results on five data sets with different scale, 
 \end{tabular}
 \end{table}
 
- As table listed above indicates, the clustering methods with W-CADO, whether KM or SC, outperform those with CADO on both AC, NMI, PR, RE and ARI. The reason is that the weight of the attribute added in our algorithm improves the similarity between similar objects and the differences between different classes of objects. Moreover, the consideration of a complete inter-coupled interaction leads to the largest improvement on clustering accuracy.
+ As table listed above indicates, the clustering methods with W-CADO, whether $k$-Mode or SC, outperform those with CADO on both AC, NMI, PR, RE and ARI. The reason is that the weight of the attribute added in our algorithm improves the similarity between similar objects and the differences between different classes of objects. Moreover, the consideration of a complete inter-coupled interaction leads to the largest improvement on clustering accuracy.
 
- For $k$-Mode, the AC improving rate ranges from 4.0\% (Balloons) to 14.2\% (Soybean-small). With regard to SC, the AC rate takes the minimal and maximal radios as 0.61\% (Breast Cancer) and 4.3\% (Balloons). In short, it can be seen that the W-CADO algorithm is exactly better than the CADO algorithm. There is a significant observation that SC mostly outperforms $k$-Mode whenever it has the same distance metric. This is consistent with the finding in \cite{Luxburg2007A}, indicating that SC very often outperforms $k$-means for numerical data.
+ For $k$-Mode, the AC improving rate ranges from 4.0\% (Balloons) to 14.2\% (Soybean-small). With regard to SC, the AC rate takes the minimal and maximal radios as 0.61\% (Breast Cancer) and 4.3\% (Balloons). In short, it can be seen that the AW-CADO algorithm is exactly better than the CADO algorithm. There is a significant observation that SC mostly outperforms $k$-Mode whenever it has the same distance metric. This is consistent with the finding in \cite{Luxburg2007A}, indicating that SC very often outperforms $k$-means for numerical data.
 
 \section{Conclusions}
-We have proposed W-CADO, a weighted coupled attribute distance metric for objects incorporating both weighted intra-coupled attribute distance for values and weighted inter-coupled attribute distance for values based on CADO algorithm. By using the intra-attribute weight, the measure increases the intra-class aggregation and inter-class dissimilarity. Furthermore, the dependence degree between each pair of attribute is showed by the inter-attribute weight. Since considering inter-coupled interaction, W-CADO algorithm has improved the clustering accuracy largely. Experimental results on the five real data sets have shown that the W-CADO algorithm is better than the CADO algorithms in clustering categorical data.
+We have proposed W-CADO, a weighted coupled attribute distance metric for objects incorporating both weighted intra-coupled attribute distance for values and weighted inter-coupled attribute distance for values based on CADO algorithm. By using the intra-attribute weight, the measure increases the intra-class aggregation and inter-class dissimilarity. Furthermore, the dependence degree between each pair of attribute is showed by the inter-attribute weight. Since considering inter-coupled interaction, AW-CADO algorithm has improved the clustering accuracy largely. Experimental results on the five real data sets have shown that the AW-CADO algorithm is better than the CADO algorithms in clustering categorical data.
 
 \section*{Acknowledgements}
 This work was supported by the National Natural Science Foundation of China (under grants 61573229, 61473194, 61432011 and U1435212), the Natural Science Foundation of Shanxi Province (under grant 2015011048), the Shanxi Scholarship Council of China (under grant 2016-003) and the National Key Basic Research and Development Program of China (973) (under grant 2013CB329404).

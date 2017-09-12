@@ -38,7 +38,7 @@ Education, School of Computer and Information Technology, Shanxi
 University, Taiyuan 030006, China}
 
 \begin{abstract}
-Measuring the distance or dissimilarity between two objects is a very difficult problem in clustering categorical data sets. The dissimilarity of categorical objects can be divided into three categories: attribute-irrelevance-based, attribute values co-occurrence-based and attribute coupling-based. We consider that each attribute has different importance for the contribution of dissimilarity between two objects. In this paper, we define a weighted dissimilarity measure between two categorical objects. It involves the frequency-based weighted intra-coupled distance within an attribute and the weighted inter-coupled distance upon value co-occurrences between attributes. Then we prove the dissimilarity measure is a metric and give an algorithm AW-CADO. The experimental results on categorical data have shown the good effect of the proposed distance measure , comparing to other measures on several UCI data sets.
+Measuring the distance or dissimilarity between two objects is a very difficult problem in clustering categorical data sets. The dissimilarity of categorical objects can be divided into three categories: attribute-irrelevance-based, attribute values co-occurrence-based and attribute coupling-based. We consider that each attribute has different importance for the contribution of dissimilarity between two objects. In this paper, we define a weighted dissimilarity measure between two categorical objects. It involves the frequency-based weighted intra-coupled distance within an attribute and the weighted inter-coupled distance upon value co-occurrences between attributes. Then we prove the dissimilarity measure is a metric and give an algorithm to  . The experimental results on categorical data have shown the good effect of the proposed distance measure , comparing to other measures on several UCI data sets.
 \end{abstract}
 \begin{keyword}
 Clustering, Coupled attribute distance, Weighting metric
@@ -81,9 +81,9 @@ Bishop's Wife & Grant & Comedy & Koster & L2 \\
 \end{table}
 
 
-As shown in Table \ref{tab:movie data}, six movie objects with three categorical attributes are divided into two classes. For movies Vertigo and Bishop's Wife, they similarity is 0 according to SMS measure, but Vertigo and Bishop's Wife are very similar because they belong to the same class L2. Another example by SMS is that the similarity between movies Vertigo and Bishop's Wife is equal to that between movies Vertigo and Good Fellas. However, the similarity of the former pair should be greater because Vertigo and Bishop's Wife belong to the same class L2. Similarly, the ALGO DISTANCE measure between movies Vertigo and Bishop's Wife is 0, which is equivalent to the distance between movies Vertigo and Good Fellas. This does not agree with the fact of Vertigo and Bishop's Wife belong to the same class L2, Vertigo and Good Fellas belong to different classes.
+As shown in Table \ref{tab:movie data}, six movie objects with three categorical attributes are divided into two classes. The value of SMS measure between movies Harvey and Bishop's Wife is 0, but Harvey and Bishop's Wife are very similar because they belong to the same class L2. Another observation by SMS is that the similarity between movies Vertigo and Bishop's Wife is equal to that between movies Vertigo and Good Fellas. However, the similarity of the former pair should be greater because Vertigo and Bishop's Wife belong to the same class L2. In the same way, the ALGO DISTANCE measure between movies Vertigo and Bishop's Wife is 0, which is equivalent to the distance between movies Vertigo and Good Fellas. This does not agree with the fact of Vertigo and Bishop's Wife belong to the same class L2, Vertigo and Good Fellas belong to different classes.
 
-The above examples show that it is highly difficult to analyse the similarity between categorical variables. The SMS and the ALGO DISTANCE fail to capture a global picture of the real relationship for categorical data \cite{Wang2015Coupled}.
+The above examples show that it is highly complex to analyse the similarity between categorical variables. The SMS and the ALGO DISTANCE fail to capture a global picture of the real relationship for categorical data.
 
 Wang put forward an effective algorithm (CADO) to improve the shortcomings of the above measures. Wang made a point about the data-driven intra-coupled similarity and inter-coupled similarity, as well as their global aggregation in unsupervised learning on categorical data \cite{Wang2015Coupled}.
 
@@ -91,14 +91,14 @@ However, the measure of intra-coupled dissimilarity in CADO does not greatly sho
 
 The shortcomings of the above measures are obvious and we summarize them as three aspects.
 \begin{itemize}
-  \item The difference of coupling between attributes is not taken into account. The CADO measure considers the inter-attribute coupling, but all of the weights for attributes are assumed to be the same.
-  \item The difference of weight for an attribute is not considered in these measures when the dissimilarity or similarity between objects is computed. In real data sets, different attributes have their own features, so the contribution of the dissimilarity or similarity among attributes is different.
+  \item The difference of coupling between attributes is not taken into account. Even if the CADO measure considers the inter-attribute coupling, all of the weights for attributes are assumed to be the same.
+  \item All of them don't consider the differences of weight for an attribute when the dissimilarity or similarity between objects is computed. In real data sets, different attributes have their own features, so the contribution of the dissimilarity or similarity among attributes is different.
   \item For some measures, the intra-attribute dissimilarity between value pairs is independent of the probability of occurrence. For example, SMS and ALGO DISTANCE assume that the value pairs are mutual independent within an attribute.
  \end{itemize}
 
 To sum up, these methods have certain challenges to accurately reflect the dissimilarity or similarity on categorical data. The distance metric proposed in this paper aims at improving the above shortcomings.
 
-In this paper, we explicitly define a measure on categorical data. The measure takes into account the characteristics of the categorical values, including the frequency probability within an attribute, the coupling inter-attribute and the feature of every attribute. The key contributions are as follows.
+In this paper, we explicitly define a measure on categorical data. The metric takes into account the characteristics of the categorical values, including the frequency probability within an attribute, the coupling inter-attribute and the feature of every attribute. The key contributions are as follows.
 \begin{itemize}
   \item An intra-attribute weighting scheme for categorical attributes is presented, which assigns different weight according to the different distribution of each attribute's values. The intra-attribute weighting not only takes into account the weight between different attributes, but also takes into consideration the occurrence frequency of the value pairs within an attribute.
 
@@ -148,7 +148,7 @@ G_r : 2^{V_r} \to 2^{X},G_r(V'_r)=\{x_i|f_r(x_i) \in V'_r\}
 \end{definition}
 where $1 \leq r \leq d, 1 \leq i \leq n, X' \subseteq X$, and ${V'_r} \subseteq V_r$.
 
-These SIFs describe the relationships between objects and attribute values. Function $F_r(X')$ maps the object set $X'$ to the associated value set of attribute $A_r$. Function $G_r(V'_r)$ maps the value set $V'_r$ of attribute $A_r$ to the dependent object set. In Table \ref{tab:movie data}, $G_3(\{Hitchcock\}) = \{ Vertigo, N by NW \}$, $F_1(\{Vertigo,N by NW\}) = \{Stewart,Grant\}$.
+These SIFs describe the relationships between objects and attribute values. Function $F_r(X')$ assigns the associated value set of attribute $A_r$ to the onject set $X'$. Function $G_r(V'_r)$ maps the value set $V'_r$ of attribute $A_r$ to the dependent object set. In Table \ref{tab:movie data}, $G_3(\{Hitchcock\}) = \{ Vertigo, N by NW \}$, $F_1(\{Vertigo,N by NW\}) = \{Stewart,Grant\}$.
 
 \begin{definition} \cite{Wang2015Coupled} The inter-coupled relative similarity based on intersection set between values $x_{ir}$ and $x_{jr}$ of attribute $A_r$ based on another attribute $A_l$ is defined as
 \begin{equation}
@@ -190,12 +190,13 @@ Subsequently, following the proposed criterion, the weight of attribute $A_r$ sh
 \end{equation}
 In a word, $\eta(A_r,x_{ir},x_{jr})$ taking different values depend on whether $x_{ir}$ and $x_{jr}$ are equal, shows the special features of attribute $A_r$ among attributes.
 
-For two attribute values $x_{ir}$ and $x_{jr}$, the weight between them is calculated by
+For the two values $x_{ir}$ and $x_{jr}$ of the attribute $A_r$, the weight between these two values is calculated by
 \begin{equation}
 \theta(x_{ir},x_{jr}) = \frac{\sigma_{A_r = x_{ir}}(X)}{\sigma_{A_r \neq NULL}(X)} * \frac{\sigma_{A_r = x_{jr}}(X)}{\sigma_{A_r \neq NULL}(X)}.
 \label{equ8}
 \end{equation}
-Here,we take OF measure as a reference that mismatches on less frequent values are assigned lower similarity and mismatches on more frequent values are assigned higher similarity \cite{Boriah2008Similarity}. Within a certain range, the bigger $\theta(x_{ir},x_{jr})$ reflects the higher similarity of $x_{ir}$ and $x_{jr}$. Alternatively, we could consider other forms of weight between two values of attribute $A_r$ according to the data structure, such as $\theta(x_{ir},x_{jr}) = \alpha \cdot \frac{\sigma_{A_r = x_{ir}}(X)}{\sigma_{A_r \neq NULL}(X)} + \gamma \cdot \frac{\sigma_{A_r = x_{jr}}(X)}{\sigma_{A_r \neq NULL}(X)}$ or $\theta(x_{ir},x_{jr}) = -\alpha \cdot \log{\frac{\sigma_{A_r = x_{ir}}(X)}{\sigma_{A_r \neq NULL}(X)}} - \gamma \cdot \log{\frac{\sigma_{A_r = x_{jr}}(X)}{\sigma_{A_r \neq NULL}(X)}}$, where $0 \leq \alpha,\gamma \leq 1 (\alpha+\gamma = 1)$ are the corresponding weights. $\theta(x_{ir},x_{jr})$ show the weight between two values of attribute $A_r$ and represent the distance between these value pair indirectly.
+Here,we take OF measure as a reference that mismatches on less frequent values are assigned lower similarity and mismatches on more frequent values are assigned higher similarity \cite{Boriah2008Similarity}. Within a certain range,
+Alternatively, we could consider other forms of weight between two values of attribute $A_r$ according to the data structure, such as $\theta(x_{ir},x_{jr}) = \alpha \cdot \frac{\sigma_{A_r = x_{ir}}(X)}{\sigma_{A_r \neq NULL}(X)} + \gamma \cdot \frac{\sigma_{A_r = x_{jr}}(X)}{\sigma_{A_r \neq NULL}(X)}$ or $\theta(x_{ir},x_{jr}) = -\alpha \cdot \log{\frac{\sigma_{A_r = x_{ir}}(X)}{\sigma_{A_r \neq NULL}(X)}} - \gamma \cdot \log{\frac{\sigma_{A_r = x_{jr}}(X)}{\sigma_{A_r \neq NULL}(X)}}$, where $0 \leq \alpha,\gamma \leq 1 (\alpha+\gamma = 1)$ are the corresponding weights. $\theta(x_{ir},x_{jr})$ show the weight between two values of attribute $A_r$ and represent the distance between these value pair indirectly.
 
 Subsequently, the intra-attribute weight is between value $x_{ir}$ and $x_{jr}$ for attribute $A_r$ is
 \begin{equation}

@@ -1,10 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{Ahmad2007KMean}
-Amir Ahmad and Lipika Dey.
-\newblock A k-mean clustering algorithm for mixed numeric and categorical data.
-\newblock {\em Data and Knowledge Engineering}, 63(2):503--527, 2007.
-
 \bibitem{Ahmad2007Method}
 Amir Ahmad and Lipika Dey.
 \newblock A method to compute distance between two categorical values of same
@@ -41,13 +36,6 @@ Hong Jia, Yiu-ming Cheung, and Jiming Liu.
 \newblock A new distance metric for unsupervised learning of categorical data.
 \newblock {\em IEEE transactions on neural networks and learning systems},
   27(5):1065--1079, 2016.
-
-\bibitem{Labiod2011A}
-Lazhar Labiod and Youn¨¨s Bennani.
-\newblock A spectral based clustering algorithm for categorical data with
-  maximum modularity.
-\newblock In {\em Esann 2011, European Symposium on Artificial Neural Networks,
-  Bruges, Belgium, April 27-29, 2011, Proceedings}, 2011.
 
 \bibitem{Liang2012The}
 Jiye Liang, Liang Bai, Chuangyin Dang, and Fuyuan Cao.

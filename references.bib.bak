@@ -7,12 +7,15 @@
   organization={SIAM}
 }
 
-@book{Ahmad2007Method,
+@article{Ahmad2007Method,
   title={A method to compute distance between two categorical values of same attribute in unsupervised learning for categorical data set},
   author={Ahmad, Amir and Dey, Lipika},
-  publisher={Elsevier Science Inc.},
-  pages={110-118},
+  journal={Pattern Recognition Letters},
+  volume={28},
+  number={1},
+  pages={110--118},
   year={2007},
+  publisher={Elsevier}
 }
 
 @article{Wang2015Coupled,
@@ -25,12 +28,15 @@
   year={2015},
 }
 
-@inproceedings{Jia2014A,
+@article{Jia2014A,
   title={A new distance metric for unsupervised learning of categorical data},
-  author={Jia, Hong and Cheung, Yiu Ming},
-  booktitle={International Joint Conference on Neural Networks},
-  pages={1893-1899},
-  year={2014},
+  author={Jia, Hong and Cheung, Yiu-ming and Liu, Jiming},
+  journal={IEEE transactions on neural networks and learning systems},
+  volume={27},
+  number={5},
+  pages={1065--1079},
+  year={2016},
+  publisher={IEEE}
 }
 
 @article{Santos2015Categorical,
@@ -108,7 +114,7 @@
 }
 
 @article{Ahmad2007KMean,
-  title={A k -mean clustering algorithm for mixed numeric and categorical data},
+  title={A k-mean clustering algorithm for mixed numeric and categorical data},
   author={Ahmad, Amir and Dey, Lipika},
   journal={Data and Knowledge Engineering},
   volume={63},
